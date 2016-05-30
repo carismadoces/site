@@ -2,12 +2,12 @@
 
     class Constantes{
 
-
+    
     	// Desenvolvimento
         /*
         static $DRIVER_DB = 'mysql:host=127.0.0.1;port=3306;dbname=carismac_prod';
         static $USER_DB = 'root';
-        static $PASS_DB = 'passwd';
+        static $PASS_DB = '597947';
         */
 
         static $TAM_PAGINA = 10;
