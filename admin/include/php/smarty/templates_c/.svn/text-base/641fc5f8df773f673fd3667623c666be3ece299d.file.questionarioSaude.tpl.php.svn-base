@@ -1,0 +1,195 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2012-03-06 00:43:51
+         compiled from "view/matricula/questionarioSaude.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:6313485574f5587f74d1923-55544378%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '641fc5f8df773f673fd3667623c666be3ece299d' => 
+    array (
+      0 => 'view/matricula/questionarioSaude.tpl',
+      1 => 1331005430,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '6313485574f5587f74d1923-55544378',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<?php if (!is_callable('smarty_function_html_radios')) include '/Users/danyelsanches/Sites/workspace_orion/orion/admin/action/../include/php/smarty/plugins/function.html_radios.php';
+if (!is_callable('smarty_function_form_input')) include '/Users/danyelsanches/Sites/workspace_orion/orion/admin/action/../include/php/smarty/plugins/function.form_input.php';
+?><script type="text/javascript">
+
+$().ready(function() {
+
+	var selectorPressaoAlta = 'input[name="pressaoAlta"]';
+	var selectorDorAbdominal = 'input[name="dorAbdominal"]';
+	var selectorParalisia = 'input[name="paralisia"]';
+	var selectorCirurgia = 'input[name="cirurgia"]';
+	var selectorAtividadeRegular = 'input[name="atividadeRegular"]';
+	
+	$(selectorPressaoAlta).change(function(){
+		var value = $(selectorPressaoAlta + ':checked').val();
+		if ( value ){
+			$('#itemPressaoAlta').show();
+		}else{
+			$('#itemPressaoAlta').hide();
+		}
+	});
+
+	$(selectorDorAbdominal).change(function(){
+		var value = $(selectorDorAbdominal + ':checked').val();
+		if ( value ){
+			$('#itemDorAbdominal').show();
+		}else{
+			$('#itemDorAbdominal').hide();
+		}
+	});
+
+	$(selectorParalisia).change(function(){
+		var value = $(selectorParalisia + ':checked').val();
+		if ( value ){
+			$('#itemParalisia').show();
+		}else{
+			$('#itemParalisia').hide();
+		}
+	});
+
+	$(selectorCirurgia).change(function(){
+		var value = $(selectorCirurgia + ':checked').val();
+		if ( value ){
+			$('#itemCirurgia').show();
+		}else{
+			$('#itemCirurgia').hide();
+		}
+	});
+
+	$(selectorAtividadeRegular).change(function(){
+		var value = $(selectorAtividadeRegular + ':checked').val();
+		if ( value ){
+			$('#itemAtividadeRegular').show();
+		}else{
+			$('#itemAtividadeRegular').hide();
+		}
+	});
+	
+});
+
+</script>
+
+<fieldset>
+	<legend>Questionário Saúde</legend>				
+
+	<p>
+		<label class="required">
+		Possui algum problema de saúde que impossibilite a prática de esportes de luta?
+		</label>
+		<?php echo smarty_function_html_radios(array('name'=>'impossibilitaPraticaEsporte','values'=>$_smarty_tpl->getVariable('ids_matricula')->value,'output'=>$_smarty_tpl->getVariable('values_matricula')->value,'separator'=>' '),$_smarty_tpl);?>
+
+	</p>
+
+	<p>
+		<label class="required">
+			É fumante?
+		</label>
+		<?php echo smarty_function_html_radios(array('name'=>'fumante','values'=>$_smarty_tpl->getVariable('ids_matricula')->value,'output'=>$_smarty_tpl->getVariable('values_matricula')->value,'separator'=>' '),$_smarty_tpl);?>
+
+	</p>
+
+	<p>
+		<label class="required">
+			Apresenta tosse?
+		</label>
+		<?php echo smarty_function_html_radios(array('name'=>'tosse','values'=>$_smarty_tpl->getVariable('ids_matricula')->value,'output'=>$_smarty_tpl->getVariable('values_matricula')->value,'separator'=>' '),$_smarty_tpl);?>
+
+	</p>
+
+	<p>
+		<label class="required">
+			Apresenta falta de ar (dispinéia)?
+		</label>
+		<?php echo smarty_function_html_radios(array('name'=>'dispineia','values'=>$_smarty_tpl->getVariable('ids_matricula')->value,'output'=>$_smarty_tpl->getVariable('values_matricula')->value,'separator'=>' '),$_smarty_tpl);?>
+
+	</p>
+
+	<p>
+		<label class="required">
+			Apresenta hipertensão arterial (pressão alta)?
+		</label>
+		<?php echo smarty_function_html_radios(array('name'=>'pressaoAlta','values'=>$_smarty_tpl->getVariable('ids_matricula')->value,'output'=>$_smarty_tpl->getVariable('values_matricula')->value,'separator'=>' '),$_smarty_tpl);?>
+
+	</p>
+	<div id="itemPressaoAlta" style="display:none;">
+		<?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('descricaoPressaoAlta')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp1=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"descricaoPressaoAlta",'label'=>"Há quantos anos ",'value'=>$_tmp1,'extra'=>"style=width:80px;'"),$_smarty_tpl);?>
+
+	</div>
+
+	<p>
+		<label class="required">
+			Apresenta dor no peito?
+		</label>
+		<?php echo smarty_function_html_radios(array('name'=>'dorPeito','values'=>$_smarty_tpl->getVariable('ids_matricula')->value,'output'=>$_smarty_tpl->getVariable('values_matricula')->value,'separator'=>' '),$_smarty_tpl);?>
+
+	</p>
+       
+    <p>
+		<label class="required">
+			Apresenta dor abdominal?
+		</label>
+		<?php echo smarty_function_html_radios(array('name'=>'dorAbdominal','values'=>$_smarty_tpl->getVariable('ids_matricula')->value,'output'=>$_smarty_tpl->getVariable('values_matricula')->value,'separator'=>' '),$_smarty_tpl);?>
+
+	</p>
+	<div id="itemDorAbdominal" style="display:none;">
+		<?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('descricaoDorAbdominal')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp2=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"descricaoDorAbdominal",'label'=>"De que tipo?",'value'=>$_tmp2,'extra'=>"style=width:600px;'"),$_smarty_tpl);?>
+
+	</div>
+	
+	<p>
+		<label class="required">
+			Tem alguma paralisia ou fraqueza muscular?
+		</label>
+		<?php echo smarty_function_html_radios(array('name'=>'paralisia','values'=>$_smarty_tpl->getVariable('ids_matricula')->value,'output'=>$_smarty_tpl->getVariable('values_matricula')->value,'separator'=>' '),$_smarty_tpl);?>
+
+	</p>
+	<div id="itemParalisia" style="display:none;">
+		<?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('descricaoParalisia')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp3=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"descricaoParalisia",'label'=>"Qual?",'value'=>$_tmp3,'extra'=>"style=width:600px;'"),$_smarty_tpl);?>
+
+	</div>
+	
+	<p>
+		<label class="required">
+			Já fez alguma cirurgia?
+		</label>
+		<?php echo smarty_function_html_radios(array('name'=>'cirurgia','values'=>$_smarty_tpl->getVariable('ids_matricula')->value,'output'=>$_smarty_tpl->getVariable('values_matricula')->value,'separator'=>' '),$_smarty_tpl);?>
+
+	</p>
+	<div id="itemCirurgia" style="display:none;">
+		<?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('descricaoCirurgia')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp4=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"descricaoCirurgia",'label'=>"Qual?",'value'=>$_tmp4,'extra'=>"style=width:600px;'"),$_smarty_tpl);?>
+
+	</div>
+	
+	<p>
+		<label class="required">
+			Pratica atividade física regularmente (pelo menos 3 vezes por semana)?
+		</label>
+		<?php echo smarty_function_html_radios(array('name'=>'atividadeRegular','values'=>$_smarty_tpl->getVariable('ids_matricula')->value,'output'=>$_smarty_tpl->getVariable('values_matricula')->value,'separator'=>' '),$_smarty_tpl);?>
+
+	</p>
+	<div id="itemAtividadeRegular" style="display:none;">
+		<?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('descricaoAtividadeRegular')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp5=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"descricaoAtividadeRegular",'label'=>"Qual?",'value'=>$_tmp5,'extra'=>"style=width:600px;'"),$_smarty_tpl);?>
+
+	</div>
+	
+	<p>
+		<label for="observacao">Observação:</label>
+        <textarea name="observacao" id="observacao" cols="80" rows="5"><?php echo (($tmp = @$_smarty_tpl->getVariable('observacao')->value)===null||$tmp==='' ? '' : $tmp);?>
+</textarea>
+	</p>
+	
+</fieldset>

@@ -1,0 +1,19 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2012-04-06 01:03:41
+         compiled from "view/matricula/salvar.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:19564580984f7e6b1d6ba1e9-59700525%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '3e2f6f9cc51ddc541d82acef1953e36bf840a8c5' => 
+    array (
+      0 => 'view/matricula/salvar.tpl',
+      1 => 1333684998,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '19564580984f7e6b1d6ba1e9-59700525',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>

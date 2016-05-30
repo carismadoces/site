@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/ws/service
+END
+GaleriaService.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/carisma_site/!svn/ver/39/trunk/carisma/admin/ws/service/GaleriaService.class.php
+END
+LoginService.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/ws/service/LoginService.class.php
+END
+GenericService.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/ws/service/GenericService.class.php
+END

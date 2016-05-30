@@ -1,0 +1,41 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2012-03-09 00:52:08
+         compiled from "view/cidade/combo.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:18793060284f597e687fd773-68865135%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '615b39e7e0654918c3a28735ae9213fcf1fe149b' => 
+    array (
+      0 => 'view/cidade/combo.tpl',
+      1 => 1327104360,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '18793060284f597e687fd773-68865135',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<?php if (!is_callable('smarty_function_html_options')) include '/Users/danyelsanches/Sites/workspace_orion/orion/admin/action/../include/php/smarty/plugins/function.html_options.php';
+?><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<script type="text/javascript">
+    $().ready(function() { 
+    	
+        $("#cidadeID").change(function(){ 
+            
+            cidadeID = $("#cidadeID").val();
+            if(cidadeID > 0)
+                $("#cbLocal").load("LocalAction.listarComboAjax",{cidadeID:cidadeID});
+            else
+                $("#localID").empty();
+        })
+        
+    })
+</script>
+
+
+
+<?php echo smarty_function_html_options(array('name'=>'cidadeID','id'=>'cidadeID','options'=>(($tmp = @$_smarty_tpl->getVariable('cidades')->value)===null||$tmp==='' ? array() : $tmp),'selected'=>(($tmp = @$_smarty_tpl->getVariable('cidadeID')->value)===null||$tmp==='' ? '' : $tmp)),$_smarty_tpl);?>

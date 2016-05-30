@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /carisma/admin
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d [OR]
+RewriteCond %{SCRIPT_FILENAME} !^(favicon\.ico|favicon\.png|media|robots\.txt|crossdomain\.xml|css|js)
+RewriteRule ^(.*)$ index.php?url=$1

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/perfil
+END
+formBusca.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/perfil/formBusca.tpl
+END
+tabelaAcaoVinculada.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/perfil/tabelaAcaoVinculada.tpl
+END
+tabelaUsuarioVinculado.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/perfil/tabelaUsuarioVinculado.tpl
+END
+tabela.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/perfil/tabela.tpl
+END
+listar.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/perfil/listar.tpl
+END
+cadastro.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/perfil/cadastro.tpl
+END

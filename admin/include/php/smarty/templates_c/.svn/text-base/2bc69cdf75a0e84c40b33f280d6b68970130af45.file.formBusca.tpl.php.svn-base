@@ -1,0 +1,41 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2012-01-20 00:03:36
+         compiled from "view/matricula/formBusca.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:15760570624f18cb78256cf4-30841290%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '2bc69cdf75a0e84c40b33f280d6b68970130af45' => 
+    array (
+      0 => 'view/matricula/formBusca.tpl',
+      1 => 1327025015,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '15760570624f18cb78256cf4-30841290',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<?php if (!is_callable('smarty_function_form_input')) include '/Users/danyelsanches/Sites/workspace_orion/orion/admin/action/../include/php/smarty/plugins/function.form_input.php';
+if (!is_callable('smarty_function_action_button')) include '/Users/danyelsanches/Sites/workspace_orion/orion/admin/action/../include/php/smarty/plugins/function.action_button.php';
+?><form action="" method="post" id="tab-stats" class="form">
+        <fieldset class="grey-bg collapsed">
+                <legend><a href="#"> Buscar</a></legend>
+                <div>
+                    <div class="float-left gutter-right">
+                        <?php echo smarty_function_form_input(array('name'=>"preMatriculaID",'label'=>"Número Matrícula"),$_smarty_tpl);?>
+
+                    </div>              
+                    <div class="float-left gutter-right" style="vertical-align: bottom">
+                        <p>
+                            <label for="">&nbsp;</label>
+                            <?php echo smarty_function_action_button(array('label'=>"Buscar",'id'=>"btBuscar",'type'=>"button",'icon'=>"fugue/magnifier.png"),$_smarty_tpl);?>
+
+                        </p>
+
+                    </div>
+                </div>
+        </fieldset>
+</form>
+<br/>

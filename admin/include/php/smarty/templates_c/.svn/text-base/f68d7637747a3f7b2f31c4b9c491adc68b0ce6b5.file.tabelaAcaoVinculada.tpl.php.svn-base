@@ -1,0 +1,62 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2014-03-29 23:48:27
+         compiled from "view/perfil/tabelaAcaoVinculada.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1057967106533785fbb6b2b0-41720799%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'f68d7637747a3f7b2f31c4b9c491adc68b0ce6b5' => 
+    array (
+      0 => 'view/perfil/tabelaAcaoVinculada.tpl',
+      1 => 1394497539,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1057967106533785fbb6b2b0-41720799',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<?php if (!is_callable('smarty_function_msg')) include '/Users/danyelsanches/Sites/workspace/carisma/admin/action/../include/php/smarty/plugins/function.msg.php';
+?><?php echo smarty_function_msg(array('obj'=>(($tmp = @$_smarty_tpl->getVariable('msgVinculoAcao')->value)===null||$tmp==='' ? null : $tmp),'type'=>"small",'autoClose'=>true),$_smarty_tpl);?>
+
+
+<!-- Add the class 'table' -->
+<table class="table" cellspacing="0" width="100%">
+
+    <thead>
+        <tr>
+        	<th scope="col">Nome</th>
+            <th scope="col">Path</th>
+            <th scope="col" class="table-actions">Ações</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+	
+	<?php if (isset($_smarty_tpl->getVariable('acaoPerfilArray',null,true,false)->value)&&count($_smarty_tpl->getVariable('acaoPerfilArray')->value)>0){?>
+	    <?php  $_smarty_tpl->tpl_vars['acaoPerfil'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('acaoPerfilArray')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['acaoPerfil']->key => $_smarty_tpl->tpl_vars['acaoPerfil']->value){
+?>
+	        <tr>
+	        	<td><?php echo $_smarty_tpl->getVariable('acaoPerfil')->value->getAcao()->getNome();?>
+</td>
+	            <td><?php echo $_smarty_tpl->getVariable('acaoPerfil')->value->getAcao()->getPath();?>
+</td>
+	            <td>
+	            	<a href="javascript:void(0);" onclick="abrirModalConfirmacaoFuncao('removerVinculoAcao', <?php echo $_smarty_tpl->getVariable('acaoPerfil')->value->getAcao()->getAcaoID();?>
+, <?php echo $_smarty_tpl->getVariable('acaoPerfil')->value->getPerfil()->getPerfilID();?>
+);" title="Excluir Vínculo"><img alt="del" src="include/images/icons/fugue/cross-circle.png" width="16" height="16"/></a>
+	            </td>
+	        </tr>
+	
+	    <?php }} ?>
+	<?php }?>
+    </tbody>
+
+</table>
+
+<?php $_template = new Smarty_Internal_Template("view/include/paginacao.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>

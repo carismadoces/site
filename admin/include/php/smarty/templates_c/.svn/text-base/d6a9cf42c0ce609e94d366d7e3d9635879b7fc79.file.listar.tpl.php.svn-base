@@ -1,0 +1,84 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2012-01-19 23:55:43
+         compiled from "view/matricula/listar.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:13927440834f18c99f59c2e0-02681371%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'd6a9cf42c0ce609e94d366d7e3d9635879b7fc79' => 
+    array (
+      0 => 'view/matricula/listar.tpl',
+      1 => 1327024522,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '13927440834f18c99f59c2e0-02681371',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<?php if (!is_callable('smarty_function_msg')) include '/Users/danyelsanches/Sites/workspace_orion/orion/admin/action/../include/php/smarty/plugins/function.msg.php';
+if (!is_callable('smarty_function_display_errors')) include '/Users/danyelsanches/Sites/workspace_orion/orion/admin/action/../include/php/smarty/plugins/function.display_errors.php';
+?><?php $_template = new Smarty_Internal_Template("layout/head.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>
+<?php $_template = new Smarty_Internal_Template("layout/menu.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>
+
+
+
+<script type="text/javascript" src="include/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="include/js/funcoes.js"></script>
+
+<script type="text/javascript">
+
+        $().ready(function() {
+
+            $("#btBuscar").click(function(){
+                carregaTabela(1);
+            })
+        });
+
+        function carregaTabela(pagina){
+            var preMatriculaID = $("#preMatriculaID").val().trim();
+
+            $("#tbAdmin").append('<img src="include/images/ajax-loader.gif"/>');    
+            $("#tbAdmin").load("MatriculaAction.tabela",
+                {
+            		preMatriculaID : preMatriculaID,
+                    pagina : pagina
+                }
+            );
+        }
+            
+        function reload(){
+            carregaTabela(1);
+        }
+
+</script>
+
+
+<div id="content" class="block-border">
+
+    <div class="block-content">
+        <div class="h1 with-menu"><h1>Consulta de Matrícula</h1></div>
+
+
+        <?php echo smarty_function_msg(array('obj'=>(($tmp = @$_smarty_tpl->getVariable('msg')->value)===null||$tmp==='' ? null : $tmp),'type'=>"small",'autoClose'=>false),$_smarty_tpl);?>
+
+        <?php echo smarty_function_display_errors(array('errors'=>(($tmp = @$_smarty_tpl->getVariable('errosValidacao')->value)===null||$tmp==='' ? null : $tmp)),$_smarty_tpl);?>
+
+
+        <div class="columns">
+			<div class="colx1-left">           
+		            <?php $_template = new Smarty_Internal_Template("view/matricula/formBusca.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>
+		            <div id="tbAdmin"><?php $_template = new Smarty_Internal_Template("view/matricula/tabela.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?></div>
+			</div>
+		</div>
+    </div>
+
+</div>
+
+<?php $_template = new Smarty_Internal_Template("layout/footer.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/phpjasperxml/class/tcpdf
+END
+LICENSE.TXT
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/phpjasperxml/class/tcpdf/LICENSE.TXT
+END
+CHANGELOG.TXT
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/phpjasperxml/class/tcpdf/CHANGELOG.TXT
+END
+unicode_data.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/phpjasperxml/class/tcpdf/unicode_data.php
+END
+tcpdf.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/phpjasperxml/class/tcpdf/tcpdf.php
+END
+tcpdf.crt
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/phpjasperxml/class/tcpdf/tcpdf.crt
+END
+barcodes.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/phpjasperxml/class/tcpdf/barcodes.php
+END
+README.TXT
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/phpjasperxml/class/tcpdf/README.TXT
+END
+htmlcolors.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/phpjasperxml/class/tcpdf/htmlcolors.php
+END
+2dbarcodes.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/phpjasperxml/class/tcpdf/2dbarcodes.php
+END
+tcpdf.fdf
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/phpjasperxml/class/tcpdf/tcpdf.fdf
+END

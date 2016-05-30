@@ -1,0 +1,84 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2014-03-29 23:48:44
+         compiled from "view/acao/tabela.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:3104364185337860c424689-42257867%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'b475f79dde7c0dd49c4673bf25d1fbe7ca634a44' => 
+    array (
+      0 => 'view/acao/tabela.tpl',
+      1 => 1394487136,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '3104364185337860c424689-42257867',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<?php if (!is_callable('smarty_function_action_button')) include '/Users/danyelsanches/Sites/workspace/carisma/admin/action/../include/php/smarty/plugins/function.action_button.php';
+?><!-- Add the class 'table' -->
+<table class="table" cellspacing="0" width="100%">
+
+    <thead>
+        <tr>
+        	<th scope="col">Nome</th>
+            <th scope="col">Caminho</th>
+            <th scope="col" class="table-actions">Ação</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+
+    <?php  $_smarty_tpl->tpl_vars['acao'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('acoes')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['acao']->key => $_smarty_tpl->tpl_vars['acao']->value){
+?>
+        <tr>
+        	<td><?php echo $_smarty_tpl->getVariable('acao')->value->getNome();?>
+</td>
+        	<td><?php echo $_smarty_tpl->getVariable('acao')->value->getPath();?>
+</td>
+            <td>
+            	<a href="AcaoAction.editar!acaoID-<?php echo $_smarty_tpl->getVariable('acao')->value->getAcaoID();?>
+" title="Editar" class="with-tip"><img alt="edit" src="include/images/icons/fugue/pencil.png" width="16" height="16"/></a>
+            	<a href="javascript:void(0);" onclick="abrirModalConfirmacao('AcaoAction.excluir!acaoID-<?php echo $_smarty_tpl->getVariable('acao')->value->getAcaoID();?>
+');" title="Deletar" class="with-tip"><img alt="del" src="include/images/icons/fugue/cross-circle.png" width="16" height="16"/></a>
+            </td>
+        </tr>
+        
+        <?php  $_smarty_tpl->tpl_vars['his'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('acao')->value->getFilhos(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['his']->key => $_smarty_tpl->tpl_vars['his']->value){
+?>
+        	
+        	<tr>
+        		<td style="padding-left:30px;"><?php echo $_smarty_tpl->getVariable('his')->value->getNome();?>
+</td>
+        		<td><?php echo $_smarty_tpl->getVariable('his')->value->getPath();?>
+</td>
+            	<td>
+	            	<a href="AcaoAction.editar!acaoID-<?php echo $_smarty_tpl->getVariable('his')->value->getAcaoID();?>
+" title="Editar" class="with-tip"><img alt="edit" src="include/images/icons/fugue/pencil.png" width="16" height="16"/></a>
+	            	<a href="javascript:void(0);" onclick="abrirModalConfirmacao('AcaoAction.excluir!acaoID-<?php echo $_smarty_tpl->getVariable('his')->value->getAcaoID();?>
+');" title="Deletar" class="with-tip"><img alt="del" src="include/images/icons/fugue/cross-circle.png" width="16" height="16"/></a>
+	            </td>
+        	</tr>
+        	
+        <?php }} ?>
+
+    <?php }} ?>
+
+    </tbody>
+
+</table>
+
+
+<?php echo smarty_function_action_button(array('label'=>" Novo",'id'=>"btNovo",'type'=>"button",'icon'=>"fugue/plus-circle.png",'action'=>"AcaoAction.cadastro",'extra'=>"style='float: right;'"),$_smarty_tpl);?>
+
+
+<?php $_template = new Smarty_Internal_Template("view/include/paginacao.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>

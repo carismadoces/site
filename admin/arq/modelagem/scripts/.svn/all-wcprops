@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/arq/modelagem/scripts
+END
+tipo_usuario.sql
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/arq/modelagem/scripts/tipo_usuario.sql
+END
+usuario.sql
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/arq/modelagem/scripts/usuario.sql
+END
+cidades.sql
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/arq/modelagem/scripts/cidades.sql
+END
+estado.sql
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/arq/modelagem/scripts/estado.sql
+END

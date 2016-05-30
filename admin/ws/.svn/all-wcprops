@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/ws
+END
+SystemActionWS.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/ws/SystemActionWS.class.php
+END
+.htaccess
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/ws/.htaccess
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/ws/index.php
+END
+autoload.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/ws/autoload.php
+END

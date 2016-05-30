@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/login
+END
+login.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/login/login.tpl
+END
+acessoNegado.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/login/acessoNegado.tpl
+END
+detalhesInclude.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/login/detalhesInclude.tpl
+END

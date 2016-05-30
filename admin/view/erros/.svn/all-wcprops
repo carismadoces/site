@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/erros
+END
+400.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/erros/400.tpl
+END
+401.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/erros/401.tpl
+END
+500.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/erros/500.tpl
+END
+sendReport.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/erros/sendReport.tpl
+END
+403.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/erros/403.tpl
+END
+404.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/erros/404.tpl
+END
+503.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/erros/503.tpl
+END
+error.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/view/erros/error.tpl
+END

@@ -1,0 +1,52 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2012-03-10 12:37:30
+         compiled from "view/endereco/formSimples.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1111187574f5b753a848dd2-34949849%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'a68a225157f869681a97565a76a9d49cb9b1d7e7' => 
+    array (
+      0 => 'view/endereco/formSimples.tpl',
+      1 => 1331393830,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1111187574f5b753a848dd2-34949849',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<?php if (!is_callable('smarty_function_form_input')) include '/Users/danyelsanches/Sites/workspace_orion/orion/admin/action/../include/php/smarty/plugins/function.form_input.php';
+?><fieldset>
+<legend>Endereço</legend>
+    <input type="hidden" name="enderecoIDEnd" value="<?php echo (($tmp = @$_smarty_tpl->getVariable('enderecoIDEnd')->value)===null||$tmp==='' ? 0 : $tmp);?>
+" />
+    <?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('cepEnd')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp1=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"cepEnd",'label'=>"Cep",'title'=>"ex: 64000-000",'required'=>true,'value'=>$_tmp1,'extra'=>"style=width:100px"),$_smarty_tpl);?>
+
+    <?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('logradouroEnd')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp2=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"logradouroEnd",'label'=>"Logradouro",'title'=>"ex: Rua José do Santos",'required'=>true,'value'=>$_tmp2),$_smarty_tpl);?>
+
+    <?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('numeroEnd')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp3=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"numeroEnd",'label'=>"Número",'title'=>"ex: 1000",'required'=>true,'value'=>$_tmp3,'extra'=>"maxlength=\"7\""),$_smarty_tpl);?>
+
+    <?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('complementoEnd')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp4=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"complementoEnd",'label'=>"Complemento",'title'=>"ex: Bloco F, Ap. 125",'value'=>$_tmp4),$_smarty_tpl);?>
+
+    <?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('bairroEnd')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp5=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"bairroEnd",'label'=>"Bairro",'title'=>"ex: Monte Castelo",'required'=>true,'value'=>$_tmp5),$_smarty_tpl);?>
+
+    
+    <div class="frmItem">
+        <label>Estado<font color="red">&nbsp;*</font>:</label>
+        <div id="cbEstado"><?php $_template = new Smarty_Internal_Template('view/estado/combo.tpl', $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?></div>
+    </div>            
+    <div class="frmItem">
+        <label>Cidade<font color="red">&nbsp;*</font>:</label>
+        <div id="cbCidade"><?php $_template = new Smarty_Internal_Template('view/cidade/combo.tpl', $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?></div>
+    </div>                                        
+
+</fieldset>

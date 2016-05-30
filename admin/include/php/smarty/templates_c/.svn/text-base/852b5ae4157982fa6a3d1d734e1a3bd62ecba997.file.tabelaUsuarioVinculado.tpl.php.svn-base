@@ -1,0 +1,62 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2014-03-29 23:48:27
+         compiled from "view/perfil/tabelaUsuarioVinculado.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1976279411533785fb9e89f8-27996591%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '852b5ae4157982fa6a3d1d734e1a3bd62ecba997' => 
+    array (
+      0 => 'view/perfil/tabelaUsuarioVinculado.tpl',
+      1 => 1394489744,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1976279411533785fb9e89f8-27996591',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<?php if (!is_callable('smarty_function_msg')) include '/Users/danyelsanches/Sites/workspace/carisma/admin/action/../include/php/smarty/plugins/function.msg.php';
+?><?php echo smarty_function_msg(array('obj'=>(($tmp = @$_smarty_tpl->getVariable('msgVinculoUsuario')->value)===null||$tmp==='' ? null : $tmp),'type'=>"small",'autoClose'=>true),$_smarty_tpl);?>
+
+
+<!-- Add the class 'table' -->
+<table class="table" cellspacing="0" width="100%">
+
+    <thead>
+        <tr>
+        	<th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col" class="table-actions">Ações</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+	
+	<?php if (isset($_smarty_tpl->getVariable('usuariosPerfilArray',null,true,false)->value)&&count($_smarty_tpl->getVariable('usuariosPerfilArray')->value)>0){?>
+	    <?php  $_smarty_tpl->tpl_vars['perfilUsuario'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('usuariosPerfilArray')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['perfilUsuario']->key => $_smarty_tpl->tpl_vars['perfilUsuario']->value){
+?>
+	        <tr>
+	        	<td><?php echo $_smarty_tpl->getVariable('perfilUsuario')->value->getUsuario()->getNome();?>
+</td>
+	            <td><?php echo $_smarty_tpl->getVariable('perfilUsuario')->value->getUsuario()->getEmail();?>
+</td>
+	            <td>
+	            	<a href="javascript:void(0);" onclick="abrirModalConfirmacaoFuncao('removerVinculoUsuario', <?php echo $_smarty_tpl->getVariable('perfilUsuario')->value->getPerfil()->getPerfilID();?>
+, <?php echo $_smarty_tpl->getVariable('perfilUsuario')->value->getUsuario()->getUsuarioID();?>
+);" title="Excluir Vínculo"><img alt="del" src="include/images/icons/fugue/cross-circle.png" width="16" height="16"/></a>
+	            </td>
+	        </tr>
+	
+	    <?php }} ?>
+	<?php }?>
+    </tbody>
+
+</table>
+
+<?php $_template = new Smarty_Internal_Template("view/include/paginacao.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>

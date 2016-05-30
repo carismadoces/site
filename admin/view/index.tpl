@@ -1,0 +1,30 @@
+{include file="layout/head.tpl"}
+{include file="layout/menu.tpl"}
+
+{literal}
+
+<script type="text/javascript">
+
+	$().ready(function() {
+
+	});
+
+</script>
+
+{/literal}
+
+<br/>
+<br/>
+
+<div id="content" class="block-border">
+
+    <div class="block-content">
+
+        {msg obj=$msg|default:null type="small" autoClose=false}
+        {display_errors errors=$errosValidacao|default:null}
+
+    </div>
+
+</div>
+
+{include file="layout/footer.tpl"}

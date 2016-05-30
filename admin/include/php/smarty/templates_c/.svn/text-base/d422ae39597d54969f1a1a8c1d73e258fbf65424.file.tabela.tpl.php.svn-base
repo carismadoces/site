@@ -1,0 +1,73 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2012-03-04 02:27:37
+         compiled from "view/prematricula/tabela.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1197505374f52fd49ef98a3-13654587%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'd422ae39597d54969f1a1a8c1d73e258fbf65424' => 
+    array (
+      0 => 'view/prematricula/tabela.tpl',
+      1 => 1330838857,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1197505374f52fd49ef98a3-13654587',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<!-- Add the class 'table' -->
+<table class="table" cellspacing="0" width="100%">
+
+    <thead>
+        <tr>
+            <th scope="col">Número</th>
+            <th scope="col">Nome Aluno</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Data Nascimento</th>
+            <th scope="col">Plano</th>
+            <th scope="col" class="table-actions">Ações</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+
+    <?php  $_smarty_tpl->tpl_vars['preMatricula'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('preMatriculas')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['preMatricula']->key => $_smarty_tpl->tpl_vars['preMatricula']->value){
+?>
+        <tr>
+            <td><?php echo $_smarty_tpl->getVariable('preMatricula')->value->getPreMatriculaID();?>
+</td>
+            <td><?php echo $_smarty_tpl->getVariable('preMatricula')->value->getNome();?>
+</td>
+            <td><?php echo $_smarty_tpl->getVariable('preMatricula')->value->getCpf();?>
+</td>
+            <td><?php echo $_smarty_tpl->getVariable('preMatricula')->value->getDtNascimento();?>
+</td>
+			<td><?php echo $_smarty_tpl->getVariable('preMatricula')->value->getPlano()->getNomePlano();?>
+</td>
+			
+            <!-- The class table-actions is designed for action icons -->
+            <td class="table-actions">
+                <a href="javascript:void(0);" onclick="abrirModalConfirmacao('PreMatriculaAction.excluir!preMatriculaID-<?php echo $_smarty_tpl->getVariable('preMatricula')->value->getPreMatriculaID();?>
+');" title="Deletar" class="with-tip"><img alt="del" src="include/images/icons/fugue/cross-circle.png" width="16" height="16"/></a>
+
+                <a href="MatriculaAction.editar!preMatriculaID-<?php echo $_smarty_tpl->getVariable('preMatricula')->value->getPreMatriculaID();?>
+" title="Realizar Matrícula" class="with-tip">
+					<img alt="Realizar Matrícula" src="include/images/icons/fugue/plus-circle-blue.png" width="16" height="16"/>
+				</a>
+				
+            </td>
+        </tr>
+
+        <?php }} ?>
+
+    </tbody>
+
+</table>
+
+<?php $_template = new Smarty_Internal_Template("view/include/paginacao.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>

@@ -1,0 +1,219 @@
+<?php
+
+class UsuarioDAO {
+
+	public function __construct() {
+        $this->conexao = Conexao::getConexao();
+    }
+
+	public function salvar($usuario) {
+
+        try {
+            	
+        	$statment = $this->conexao->prepare("INSERT INTO 
+            		usuario(
+	                login,
+	                senha,
+	                email,
+	                data_criacao,
+	                nome
+	            )
+                VALUES (
+                	:login,
+	                :senha,
+	                :email,
+	                :dataCriacao,
+	                :nome
+	                );");
+        	
+            if ($statment->execute($usuario->toBD())) {
+                return $usuario;
+            } else {
+                $erros = $statment->errorInfo();
+                throw new Exception("Erro UsuarioDAO: " . $erros[2]);
+            }
+        } catch (PDOException $err) {
+            throw new Exception("Erro UsuarioDAO:" . $err->getMessage());
+        }
+    }
+    
+	public function alterar($usuario) {
+
+        try {
+			
+            if ( isset($usuario) && $usuario != null) {
+            	
+                $statment = $this->conexao->prepare("UPDATE usuario SET
+                        login = :login,
+                        nome  = :nome,
+						email = :email
+                        WHERE id_usuario = " . $usuario->getUsuarioID() );
+                
+                $statment->bindParam(':login', $usuario->getLogin());
+                $statment->bindParam(':nome', $usuario->getNome());
+                $statment->bindParam(':email', $usuario->getEmail());
+            }
+			
+            if ($statment->execute()) {
+                return $usuario;
+            } else {
+                $erros = $statment->errorInfo();
+                throw new Exception("Erro UsuarioDAO: " . $erros[2]);
+            }
+        } catch (PDOException $err) {
+            throw new Exception("Erro UsuarioDAO:" . $err->getMessage());
+        }
+    }
+    
+	public function buscarPorLogin($login) {
+        try {
+            $row = $this->conexao->query("SELECT * FROM usuario u WHERE login = '$login' ")->fetch(PDO::FETCH_SERIALIZE);
+
+            if (isset ($row['id_usuario']) && $row['id_usuario'] > 0) {
+                $usuario = new UsuarioBean($row['id_usuario'], $row['nome'], $row['login'], $row['senha'],$row['email'], Util::dateToString($row['data_criacao']));
+                return $usuario;
+            } else {
+                return null;
+            }
+        } catch (PDOException $err) {
+            throw new Exception("Erro UsuarioDAO:" . $err->getMessage());
+        }
+    }
+    
+    public function buscarUsuario($usuario) {
+        try {
+
+        	$where = $this->getWhere($usuario);
+            $row = $this->conexao->query("SELECT * FROM usuario u $where")->fetch(PDO::FETCH_SERIALIZE);
+
+            if (isset ($row['id_usuario']) && $row['id_usuario'] > 0) {
+                $usuario = new UsuarioBean($row['id_usuario'], $row['nome'], $row['login'], $row['senha'],$row['email'], Util::dateToString($row['data_criacao']));
+                return $usuario;
+            } else {
+                return null;
+            }
+        } catch (PDOException $err) {
+            throw new Exception("Erro UsuarioDAO:" . $err->getMessage());
+        }
+    }
+    
+	public function consultarTodos() {
+        try {
+			
+        	$usuarios = array();
+        	
+            $statment = $this->conexao->query("SELECT * FROM usuario");
+        	foreach ($statment->fetchAll(PDO::FETCH_SERIALIZE) as $row){
+                $usuario = new UsuarioBean($row['id_usuario'], $row['nome'], $row['login'], $row['senha'],$row['email'], Util::dateToString($row['data_criacao']));
+                $usuarios[] = $usuario;
+            }
+            
+            return $usuarios;
+            
+        } catch (PDOException $err) {
+            throw new Exception("Erro UsuarioDAO(consultarTodos):" . $err->getMessage());
+        }
+    }
+
+	public function listar($pagina = 1, $usuario = null) {
+        try {
+			
+            $limite = Util::getPaginacao($pagina);
+            $where = $this->getWhere($usuario);
+			
+            $usuarios = array();
+            $statment = $this->conexao->query("SELECT * FROM usuario u $where $limite");
+
+            foreach ($statment->fetchAll(PDO::FETCH_SERIALIZE) as $row){
+                $usuario = new UsuarioBean($row['id_usuario'], $row['nome'], $row['login'], $row['senha'],$row['email'], Util::dateToString($row['data_criacao']));
+                $usuarios[] = $usuario;
+            }
+            
+            return $usuarios;
+        } catch (PDOException $err) {
+            throw new Exception("Erro UsuarioDAO:" . $err->getMessage());
+        }
+    }
+    
+	public function listarUsuarioPerfil($perfilID = null) {
+        try {
+			
+            $usuarioPerfilArray = array();
+            
+            $columns = " u.id_usuario, u.nome nome_usuario, u.login, u.email, u.data_criacao, p.id_perfil, p.nome nome_perfil, p.ds_perfil ";
+            $statment = $this->conexao->query("SELECT $columns FROM usuario u 
+            	INNER JOIN usuario_perfil up ON (up.id_usuario = u.id_usuario)
+            	INNER JOIN perfil p ON (p.id_perfil = up.id_perfil)
+            	WHERE up.id_perfil = $perfilID");
+
+            foreach ($statment->fetchAll(PDO::FETCH_SERIALIZE) as $row){
+            	
+            	$usuario = new UsuarioBean($row['id_usuario'], $row['nome_usuario'], $row['login'], null, $row['email'], Util::dateToString($row['data_criacao']));
+            	$perfil = new PerfilBean($row['id_perfil'], $row['nome_perfil'], $row['ds_perfil']);
+            	$usuarioPerfil = new UsuarioPerfilBean($usuario, $perfil);
+            	
+                $usuarioPerfilArray[] = $usuarioPerfil;
+            }
+            
+            return $usuarioPerfilArray;
+        } catch (PDOException $err) {
+            throw new Exception("Erro UsuarioDAO:" . $err->getMessage());
+        }
+    }
+    
+	public function excluir($idUsuario) {
+
+        try {
+			
+            $statment = $this->conexao->prepare("DELETE FROM usuario WHERE id_usuario = :idUsuario");
+            $statment->bindParam(':idUsuario', $idUsuario);
+
+            if(!$statment->execute()) {
+                $erros = $statment->errorInfo();
+                throw new Exception("Erro UsuarioDAO (excluir): ".$erros[2]);
+            }
+
+        }catch(PDOException $err) {
+            throw new Exception("Erro UsuarioDAO:".$err->getMessage());
+        }
+
+    }
+    
+    public function total($usuario) {
+        try {
+            $where = $this->getWhere($usuario);
+            $total = $this->conexao->query("SELECT COUNT(u.id_usuario) total FROM usuario u $where")->fetch(PDO::FETCH_COLUMN);
+
+            return $total;
+        } catch (PDOException $err) {
+            throw new Exception("Erro UsuarioDAO:" . $err->getMessage());
+        }
+    }
+    
+	private function getWhere($usuario) {
+
+        $where = " WHERE 1 = 1 ";
+
+        if ( isset($usuario) && $usuario != null ){
+			if ( $usuario->getUsuarioID() != null ) {
+	            $where = $where . " AND u.id_usuario = " . $usuario->getUsuarioID();
+	        }
+	        
+	    	if ( $usuario->getNome() != null ) {
+	            $where = $where . " AND u.nome like '%" . $usuario->getNome() . "%'";
+	        }
+	        
+	 		if ( $usuario->getEmail() != null ) {
+	 			$where = $where . " AND u.email like '%" . $usuario->getEmail() . "%'";
+	        }
+	        
+        	if ( $usuario->getLogin() != null ) {
+	 			$where = $where . " AND u.login like '%" . $usuario->getLogin() . "%'";
+	        }
+        }
+        
+        return $where;
+    }
+}
+
+?>

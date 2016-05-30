@@ -1,0 +1,44 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2014-03-29 23:48:44
+         compiled from "view/acao/formBusca.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:15605009545337860c36be55-10349505%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '6f2d23c5dc973200f2b6ecd875923dc932ee748d' => 
+    array (
+      0 => 'view/acao/formBusca.tpl',
+      1 => 1394482860,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '15605009545337860c36be55-10349505',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<?php if (!is_callable('smarty_function_form_input')) include '/Users/danyelsanches/Sites/workspace/carisma/admin/action/../include/php/smarty/plugins/function.form_input.php';
+if (!is_callable('smarty_function_action_button')) include '/Users/danyelsanches/Sites/workspace/carisma/admin/action/../include/php/smarty/plugins/function.action_button.php';
+?><form action="" method="post" id="tab-stats" class="form">
+        <fieldset class="grey-bg">
+                <legend><a href="#"> Buscar</a></legend>
+                <div>
+                    <div class="float-left gutter-right">
+                        <?php echo smarty_function_form_input(array('name'=>"nome",'label'=>"Nome",'extra'=>"size=\"30\""),$_smarty_tpl);?>
+
+                    </div>
+                    <div class="float-left gutter-right">
+                        <?php echo smarty_function_form_input(array('name'=>"path",'label'=>"Caminho",'extra'=>"size=\"50\""),$_smarty_tpl);?>
+
+                    </div>   
+                    <div class="float-left gutter-right" style="vertical-align: bottom">
+                        <p>
+                            <label for="">&nbsp;</label>
+                            <?php echo smarty_function_action_button(array('label'=>"Buscar",'id'=>"btBuscar",'type'=>"button",'icon'=>"fugue/magnifier.png"),$_smarty_tpl);?>
+
+                        </p>
+                    </div>
+                </div>
+        </fieldset>
+</form>
+<br/>

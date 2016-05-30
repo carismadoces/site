@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php
+END
+Seguranca.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/Seguranca.class.php
+END
+monta_cenario.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/monta_cenario.php
+END
+Conexao.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/Conexao.class.php
+END
+EnviarEmail.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/EnviarEmail.class.php
+END
+Util.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/carisma_site/!svn/ver/14/trunk/carisma/admin/include/php/Util.class.php
+END
+easyphpthumbnail.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/easyphpthumbnail.class.php
+END
+RestUtils.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/RestUtils.class.php
+END
+Constantes.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/carisma_site/!svn/ver/6/trunk/carisma/admin/include/php/Constantes.class.php
+END
+class.phpmailer.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/class.phpmailer.php
+END
+class.pop3.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/class.pop3.php
+END
+function.resize.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/function.resize.php
+END
+easyphpthumbnail.class.php5
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/easyphpthumbnail.class.php5
+END

@@ -1,0 +1,9 @@
+<?php
+$server="localhost";
+$db="phpjasperxml";
+$user="root";
+$pass="597947";
+$version="0.8b";
+$pgport=3306;
+$pchartfolder="./class/pchart2";
+?>

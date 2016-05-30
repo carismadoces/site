@@ -1,0 +1,46 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2012-03-04 03:18:26
+         compiled from "view/login/acessoNegado.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:19167078744f5309328f5498-28174599%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '12f07afbebcddf7b0727b90f2b2d3347859655c8' => 
+    array (
+      0 => 'view/login/acessoNegado.tpl',
+      1 => 1330841904,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '19167078744f5309328f5498-28174599',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<?php $_template = new Smarty_Internal_Template("layout/head.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>
+
+
+
+
+
+
+<div id="content" class="block-border">
+
+    <div class="block-content">                
+        <div class="columns">
+            <div class="colx1-left" style="text-align: center">
+                <?php if (!isset($_smarty_tpl->getVariable('urlAnterior',null,true,false)->value)||strlen($_smarty_tpl->getVariable('urlAnterior')->value)<=0){?><?php $_smarty_tpl->tpl_vars['urlAnterior'] = new Smarty_variable("LoginAction", null, null);?><?php }?>
+                <a class="big-button" href="<?php echo $_smarty_tpl->getVariable('urlAnterior')->value;?>
+">
+                    <img src="include/images/icons/fugue/exclamation-diamond.png" alt="ic"/>
+                    Acesso Negado, clique aqui para voltar!
+                </a>             
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<?php $_template = new Smarty_Internal_Template("layout/footer.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>

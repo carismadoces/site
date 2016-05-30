@@ -1,0 +1,53 @@
+<?php
+	
+    class Constantes{
+	    
+    	// Produ��o
+    	static $DRIVER_DB = 'mysql:host=localhost;port=3306;dbname=carismac_prod';
+        static $USER_DB = 'carismac_prod';
+        static $PASS_DB = 'carismac_prod';
+
+    	/*
+    	// Desenvolvimento
+        static $DRIVER_DB = 'mysql:host=localhost;port=3306;dbname=carisma';
+        static $USER_DB = 'root';
+        static $PASS_DB = '597947';
+        */
+    	
+        static $TAM_PAGINA = 10;
+
+        static $ASCENDENTE  = "ASC";
+        static $DESCENDENTE = "DESC";
+
+        /** CONSTANTES DE CONFIGURAÇÃO DA SUPERCLASSE ACTION **/
+        static $URL_CRIPTOGRAFADA = false;
+                               
+        /** CONSTANTES DE TIPOS DE MENSAGENS **/
+        static $MSG_SUCCESS = "success";
+        static $MSG_ERROR   = "error";
+        static $MSG_WARN    = "warning";
+        static $MSG_INFO   = "";
+        static $MSG_LOADING   = "loading";
+
+        /** CONSTANTES DE STRINGS DE MENSAGENS **/
+        static $STR_MSG_SUCCESS = "Operação Realizada Com Sucesso!!!";
+        static $STR_MSG_LOADING = "Carregando...";
+
+        static $TAM_THUMB_IMG = 100;
+        static $IMG_DEFAULT = "default.png";
+        static $DIR_CONTEXT = "/home1/carismac/public_html/";
+        //static $DIR_CONTEXT = "/Users/danyelsanches/Sites/workspace/carisma/";
+        static $DIR_IMAGENS = "imagens/";
+
+        /** CONSTANTES DE FUSO HORARIO **/
+        static $FUSO_BRASILIA = -3;
+
+        /** CONSTANTE PARA DIZER QUE É EDIÇÃO **/
+        static $EDIT = 1;
+        
+        /** CONSTANTES WEB SERVICE */
+        static $CONTEXT_PATH   = "service/";
+
+    }
+    
+?>

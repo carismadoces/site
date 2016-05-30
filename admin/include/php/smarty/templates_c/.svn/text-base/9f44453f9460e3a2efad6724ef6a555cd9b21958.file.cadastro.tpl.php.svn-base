@@ -1,0 +1,158 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2012-03-29 00:14:58
+         compiled from "view/matricula/cadastro.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:19582456734f73d3b2058f75-48528957%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '9f44453f9460e3a2efad6724ef6a555cd9b21958' => 
+    array (
+      0 => 'view/matricula/cadastro.tpl',
+      1 => 1332990896,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '19582456734f73d3b2058f75-48528957',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<?php if (!is_callable('smarty_function_msg')) include '/Users/danyelsanches/Sites/workspace_orion/orion/admin/action/../include/php/smarty/plugins/function.msg.php';
+if (!is_callable('smarty_function_display_errors')) include '/Users/danyelsanches/Sites/workspace_orion/orion/admin/action/../include/php/smarty/plugins/function.display_errors.php';
+if (!is_callable('smarty_function_form_input')) include '/Users/danyelsanches/Sites/workspace_orion/orion/admin/action/../include/php/smarty/plugins/function.form_input.php';
+if (!is_callable('smarty_function_html_table')) include '/Users/danyelsanches/Sites/workspace_orion/orion/admin/action/../include/php/smarty/plugins/function.html_table.php';
+if (!is_callable('smarty_function_action_button')) include '/Users/danyelsanches/Sites/workspace_orion/orion/admin/action/../include/php/smarty/plugins/function.action_button.php';
+?><?php $_template = new Smarty_Internal_Template("layout/head.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>
+<?php $_template = new Smarty_Internal_Template("layout/menu.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>
+
+
+
+<script type="text/javascript" src="include/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="include/js/funcoes.js"></script>
+
+<link href="include/js/uploadify/uploadify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="include/js/uploadify/swfobject.js"></script>
+<script type="text/javascript" src="include/js/uploadify/jquery.uploadify.min.js"></script>
+    
+<script type="text/javascript">
+
+	$().ready(function() {
+
+		$('#cpf').mask("999.999.999-99", {placeholder:""});
+		$('#cepEnd').mask("99.999-999", {placeholder:""});
+		$('#cpfResponsavel').mask("999.999.999-99", {placeholder:""});
+		$('#dtNascimento').datepick({dateFormat: 'dd/mm/yyyy'});
+		$('#dtPreMatricula').datepick({dateFormat: 'dd/mm/yyyy'});
+
+	});
+
+	function imprimirContrato(){
+		window.open('MatriculaAction.imprimirContrato','_blank', 'width=1000, height=800')
+	}
+
+</script>
+
+
+
+
+<div id="content" class="block-border">
+
+    <div class="block-content">
+        <div class="h1 with-menu"><h1>Matrícula</h1></div>
+
+        <?php echo smarty_function_msg(array('obj'=>(($tmp = @$_smarty_tpl->getVariable('msg')->value)===null||$tmp==='' ? null : $tmp),'type'=>"small",'autoClose'=>false),$_smarty_tpl);?>
+
+        <?php echo smarty_function_display_errors(array('errors'=>(($tmp = @$_smarty_tpl->getVariable('errosValidacao')->value)===null||$tmp==='' ? null : $tmp)),$_smarty_tpl);?>
+
+		
+		<br/>
+        <div class="columns">
+			<div class="colx1-left">
+                <form id="frmUsuario" action="MatriculaAction.salvar" class="form" method="post">
+                    <input type="hidden" name="preMatriculaID" id="preMatriculaID" value="<?php echo (($tmp = @$_smarty_tpl->getVariable('preMatriculaID')->value)===null||$tmp==='' ? 0 : $tmp);?>
+" />
+					<input type="hidden" name="planoID" id="planoID" value="<?php echo (($tmp = @$_smarty_tpl->getVariable('planoID')->value)===null||$tmp==='' ? 0 : $tmp);?>
+" />
+					
+                    <fieldset>
+                        <legend>Dados Pré-Matrícula</legend>
+                        <?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('nome')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp1=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"nome",'label'=>"Nome",'required'=>true,'value'=>$_tmp1),$_smarty_tpl);?>
+
+                        <?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('email')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp2=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"email",'label'=>"Email",'required'=>true,'value'=>$_tmp2,'extra'=>"style=width:300px"),$_smarty_tpl);?>
+
+                        <?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('cpf')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp3=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"cpf",'label'=>"CPF",'required'=>true,'value'=>$_tmp3,'extra'=>"style=width:150px"),$_smarty_tpl);?>
+
+                        <?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('dtNascimento')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp4=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"dtNascimento",'label'=>"Data de Nascimento",'required'=>true,'value'=>$_tmp4,'extra'=>"style=width:150px"),$_smarty_tpl);?>
+
+                        <?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('telefone')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp5=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"telefone",'label'=>"Telefone",'required'=>true,'value'=>$_tmp5,'extra'=>"style=width:150px"),$_smarty_tpl);?>
+
+                       	
+                       	<h4>Modalidades:</h4>
+                       	<br/>
+                  		<?php echo smarty_function_html_table(array('loop'=>$_smarty_tpl->getVariable('modalidadeArray')->value,'cols'=>", Modalidade",'table_attr'=>$_smarty_tpl->getVariable('class')->value),$_smarty_tpl);?>
+
+                       	
+                       	<?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('dtPreMatricula')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp6=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"dtPreMatricula",'label'=>"Data Pré-Matrícula",'required'=>true,'value'=>$_tmp6,'extra'=>"style=width:150px"),$_smarty_tpl);?>
+
+                       	
+                       	<p>
+                            <input type="hidden" name="alunoAcademia" id="alunoAcademia" value="false" <?php if ((($tmp = @$_smarty_tpl->getVariable('alunoAcademia')->value)===null||$tmp==='' ? false : $tmp)){?> true<?php }?> />
+                            <b>Aluno academia:</b>
+                            <?php if ($_smarty_tpl->getVariable('alunoAcademia')->value){?>
+                            	Sim
+                            <?php }else{ ?>
+                            	Não
+                            <?php }?>
+                            
+                        </p>
+                        
+                        <!--
+                        <p>
+                            <input type="checkbox" name="alunoAreaMolhada" id="alunoAreaMolhada" value="false" <?php if ((($tmp = @$_smarty_tpl->getVariable('alunoAreaMolhada')->value)===null||$tmp==='' ? false : $tmp)){?> checked="true"<?php }?> />
+                            <label for="alunoAreaMolhada"> Aluno Área Molhada</label>
+                        </p>
+                       	-->
+                       	 
+                       	<?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('nomePlano')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp7=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"plano",'label'=>"Plano",'required'=>true,'value'=>$_tmp7,'extra'=>"disabled=true style=width:150px"),$_smarty_tpl);?>
+
+                       	
+                       	<?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('qtdParcelas')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp8=ob_get_clean();?><?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('valor')->value)===null||$tmp==='' ? '0,00' : $tmp);?>
+<?php $_tmp9=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"valor",'label'=>"Valor R"."$"." - ".$_tmp8,'required'=>true,'value'=>$_tmp9,'extra'=>"style=width:150px readonly=true"),$_smarty_tpl);?>
+
+                       	
+                    </fieldset>
+                    
+                    <?php $_template = new Smarty_Internal_Template("view/matricula/dadosResponsavel.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>
+                    
+                    <?php $_template = new Smarty_Internal_Template("view/endereco/formSimples.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>
+                    
+                    <p style="text-align: right;">
+                    	<?php echo smarty_function_action_button(array('label'=>"Imprimir Contrato",'type'=>"button",'extra'=>"onclick=\"imprimirContrato();\""),$_smarty_tpl);?>
+			
+						<?php echo smarty_function_action_button(array('type'=>"voltar",'label'=>"Voltar",'action'=>"PreMatriculaAction.listar"),$_smarty_tpl);?>
+
+                        <?php echo smarty_function_action_button(array('label'=>"Salvar",'type'=>"submit"),$_smarty_tpl);?>
+
+                    </p> 
+                </form>
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+<?php $_template = new Smarty_Internal_Template("layout/footer.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>

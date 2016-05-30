@@ -1,0 +1,31 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2012-03-06 00:36:14
+         compiled from "view/matricula/dadosMatricula.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:6285165874f55862eebbc44-70803629%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'c684e0b7ae71e46984ce85f7649cf4947ddb5c0b' => 
+    array (
+      0 => 'view/matricula/dadosMatricula.tpl',
+      1 => 1331004969,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '6285165874f55862eebbc44-70803629',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<?php if (!is_callable('smarty_function_form_input')) include '/Users/danyelsanches/Sites/workspace_orion/orion/admin/action/../include/php/smarty/plugins/function.form_input.php';
+?><fieldset>
+	<legend>Dados Matrícula</legend>				
+	
+	<?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('nomeResponsavel')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp1=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"nomeResposanvel",'label'=>"Nome Responsável",'value'=>$_tmp1),$_smarty_tpl);?>
+
+	<?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('cpfResponsavel')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp2=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"cpfResponsavel",'label'=>"CPF Responsável",'required'=>true,'value'=>$_tmp2,'extra'=>"style=width:150px"),$_smarty_tpl);?>
+
+	
+</fieldset>

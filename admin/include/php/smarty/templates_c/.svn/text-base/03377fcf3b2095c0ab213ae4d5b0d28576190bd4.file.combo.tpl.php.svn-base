@@ -1,0 +1,44 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2012-03-09 01:29:28
+         compiled from "view/estado/combo.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:14343776824f598728dbf306-83520157%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '03377fcf3b2095c0ab213ae4d5b0d28576190bd4' => 
+    array (
+      0 => 'view/estado/combo.tpl',
+      1 => 1331267366,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '14343776824f598728dbf306-83520157',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<?php if (!is_callable('smarty_function_html_options')) include '/Users/danyelsanches/Sites/workspace_orion/orion/admin/action/../include/php/smarty/plugins/function.html_options.php';
+?><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<script type="text/javascript">            
+    $().ready(function() { 
+    	
+      $("#estadoID").change(function(){        
+            estadoID = $("#estadoID").val();
+            
+            if(estadoID > 0){
+                $("#cbCidade").append('<img src="include/imagens/ajax-loader.gif"/>');
+                $("#cbCidade").load("CidadeAction.listarComboAjax",{estadoID:estadoID});
+            }
+            else
+                $("#cidadeID").empty();
+                            
+      })
+        
+    })
+    
+</script>
+
+
+<?php echo smarty_function_html_options(array('name'=>'estadoID','id'=>'estadoID','options'=>(($tmp = @$_smarty_tpl->getVariable('estados')->value)===null||$tmp==='' ? array() : $tmp),'selected'=>(($tmp = @$_smarty_tpl->getVariable('estadoID')->value)===null||$tmp==='' ? '' : $tmp)),$_smarty_tpl);?>

@@ -1,0 +1,61 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2014-03-29 23:59:23
+         compiled from "view/usuario/tabela.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:12329431115337888b40ef76-12580927%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '99d6b6f763592751b18325eaad56150d523f8546' => 
+    array (
+      0 => 'view/usuario/tabela.tpl',
+      1 => 1386599873,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '12329431115337888b40ef76-12580927',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<!-- Add the class 'table' -->
+<table class="table" cellspacing="0" width="100%">
+
+    <thead>
+        <tr>
+        	<th scope="col">Nome</th>
+            <th scope="col">Login</th>
+            <th scope="col">Email</th>
+            <th scope="col" class="table-actions">Ações</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+
+    <?php  $_smarty_tpl->tpl_vars['usuario'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('usuarios')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['usuario']->key => $_smarty_tpl->tpl_vars['usuario']->value){
+?>
+        <tr>
+        	<td><?php echo $_smarty_tpl->getVariable('usuario')->value->getNome();?>
+</td>
+        	<td><?php echo $_smarty_tpl->getVariable('usuario')->value->getLogin();?>
+</td>
+            <td><?php echo $_smarty_tpl->getVariable('usuario')->value->getEmail();?>
+</td>
+            <td>
+            	<a href="UsuarioAction.editar!usuarioID-<?php echo $_smarty_tpl->getVariable('usuario')->value->getUsuarioID();?>
+" title="Editar" class="with-tip"><img alt="edit" src="include/images/icons/fugue/pencil.png" width="16" height="16"/></a>
+            	<a href="javascript:void(0);" onclick="abrirModalConfirmacao('UsuarioAction.excluir!usuarioID-<?php echo $_smarty_tpl->getVariable('usuario')->value->getUsuarioID();?>
+');" title="Deletar" class="with-tip"><img alt="del" src="include/images/icons/fugue/cross-circle.png" width="16" height="16"/></a>
+            </td>
+        </tr>
+
+    <?php }} ?>
+
+    </tbody>
+
+</table>
+
+<?php $_template = new Smarty_Internal_Template("view/include/paginacao.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>

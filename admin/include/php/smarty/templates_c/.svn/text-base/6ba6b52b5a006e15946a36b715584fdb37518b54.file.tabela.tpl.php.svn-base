@@ -1,0 +1,63 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2014-03-29 23:48:12
+         compiled from "view/perfil/tabela.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:639797095533785eca535e6-06922092%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '6ba6b52b5a006e15946a36b715584fdb37518b54' => 
+    array (
+      0 => 'view/perfil/tabela.tpl',
+      1 => 1394035603,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '639797095533785eca535e6-06922092',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<?php if (!is_callable('smarty_function_action_button')) include '/Users/danyelsanches/Sites/workspace/carisma/admin/action/../include/php/smarty/plugins/function.action_button.php';
+?><!-- Add the class 'table' -->
+<table class="table" cellspacing="0" width="100%">
+
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Descrição</th>
+            <th scope="col" class="table-actions">Ações</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+
+    <?php  $_smarty_tpl->tpl_vars['perfil'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('perfis')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['perfil']->key => $_smarty_tpl->tpl_vars['perfil']->value){
+?>
+        <tr>
+        	<td><?php echo $_smarty_tpl->getVariable('perfil')->value->getNome();?>
+</td>
+        	<td><?php echo $_smarty_tpl->getVariable('perfil')->value->getDsPerfil();?>
+</td>
+            <td>
+            	<a href="PerfilAction.editar!perfilID-<?php echo $_smarty_tpl->getVariable('perfil')->value->getPerfilID();?>
+" title="Editar" class="with-tip"><img alt="edit" src="include/images/icons/fugue/pencil.png" width="16" height="16"/></a>
+            	<a href="javascript:void(0);" onclick="abrirModalConfirmacao('PerfilAction.excluir!perfilID-<?php echo $_smarty_tpl->getVariable('perfil')->value->getPerfilID();?>
+');" title="Deletar" class="with-tip"><img alt="del" src="include/images/icons/fugue/cross-circle.png" width="16" height="16"/></a>
+            </td>
+        </tr>
+
+    <?php }} ?>
+
+    </tbody>
+
+</table>
+
+
+<?php echo smarty_function_action_button(array('label'=>" Novo",'id'=>"btNovo",'type'=>"button",'icon'=>"fugue/plus-circle.png",'action'=>"PerfilAction.cadastro",'extra'=>"style='float: right;'"),$_smarty_tpl);?>
+
+
+<?php $_template = new Smarty_Internal_Template("view/include/paginacao.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>

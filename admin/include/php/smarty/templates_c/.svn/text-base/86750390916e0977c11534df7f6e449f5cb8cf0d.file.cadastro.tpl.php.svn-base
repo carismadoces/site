@@ -1,0 +1,209 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2014-03-29 23:48:15
+         compiled from "view/perfil/cadastro.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1221875187533785efa09887-28243310%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '86750390916e0977c11534df7f6e449f5cb8cf0d' => 
+    array (
+      0 => 'view/perfil/cadastro.tpl',
+      1 => 1394506911,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1221875187533785efa09887-28243310',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<?php if (!is_callable('smarty_function_msg')) include '/Users/danyelsanches/Sites/workspace/carisma/admin/action/../include/php/smarty/plugins/function.msg.php';
+if (!is_callable('smarty_function_display_errors')) include '/Users/danyelsanches/Sites/workspace/carisma/admin/action/../include/php/smarty/plugins/function.display_errors.php';
+if (!is_callable('smarty_function_form_input')) include '/Users/danyelsanches/Sites/workspace/carisma/admin/action/../include/php/smarty/plugins/function.form_input.php';
+if (!is_callable('smarty_function_html_options')) include '/Users/danyelsanches/Sites/workspace/carisma/admin/action/../include/php/smarty/plugins/function.html_options.php';
+if (!is_callable('smarty_function_action_button')) include '/Users/danyelsanches/Sites/workspace/carisma/admin/action/../include/php/smarty/plugins/function.action_button.php';
+?><?php $_template = new Smarty_Internal_Template("layout/head.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>
+<?php $_template = new Smarty_Internal_Template("layout/menu.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>
+
+
+
+<script type="text/javascript" src="include/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="include/js/funcoes.js"></script>
+
+<script type="text/javascript">
+
+	$().ready(function() {
+		
+		$("#frmPerfil").validate({
+            rules: {
+	            	nome: {
+	                    required: true,
+	                    maxlength: 45
+	                },
+	                identificador:{
+			            maxlength: 100
+			        }
+	            }
+			});
+	});
+
+	function voltar(){
+		document.forms[0].action = 'PerfilAction.listar';
+		document.forms[0].submit();
+	}
+
+	function alterar(){
+		$('#frmPerfil').attr('action', 'PerfilAction.alterar');
+		$('#frmPerfil').submit();
+	}
+
+	function vincularUsuario(){
+		var usuarioID = $('#usuario option:selected').val();
+		var perfilID = $('#perfilID').val();
+		
+		$("#tbUsuarioVinculado").append('<img src="include/images/ajax-loader.gif"/>');    
+        $("#tbUsuarioVinculado").load("PerfilAction.vincularUsuario",
+            {
+        		usuarioID : usuarioID,
+        		perfilID: perfilID
+            }
+        );
+	}
+
+	function removerVinculoUsuario(){
+		
+		var perfilID = arguments[0][1];
+		var usuarioID = arguments[0][2];
+		$("#tbUsuarioVinculado").append('<img src="include/images/ajax-loader.gif"/>');    
+        $("#tbUsuarioVinculado").load("PerfilAction.removerVinculoUsuario",
+            {
+        		perfilID: perfilID,
+        		usuarioID : usuarioID        		
+            }
+        );        
+	}
+
+	function vincularAcao(){
+		var acaoID = $('#acao option:selected').val();
+		var perfilID = $('#perfilID').val();
+		
+		$("#tbAcaoVinculada").append('<img src="include/images/ajax-loader.gif"/>');    
+        $("#tbAcaoVinculada").load("PerfilAction.vincularAcao",
+            {
+        		acaoID : acaoID,
+        		perfilID: perfilID
+            }
+        );
+	}
+
+	function removerVinculoAcao(){
+		
+		var acaoID = arguments[0][1];
+		var perfilID = arguments[0][2];
+		$("#tbAcaoVinculada").append('<img src="include/images/ajax-loader.gif"/>');    
+        $("#tbAcaoVinculada").load("PerfilAction.removerVinculoAcao",
+            {
+        		acaoID : acaoID,
+        		perfilID: perfilID        		
+            }
+        );        
+	}
+	
+</script>
+
+
+<div id="content" class="block-border">
+
+    <div class="block-content">
+        <div class="h1 with-menu"><h1>Perfil</h1></div>
+		
+        <?php echo smarty_function_msg(array('obj'=>(($tmp = @$_smarty_tpl->getVariable('msg')->value)===null||$tmp==='' ? null : $tmp),'type'=>"small",'autoClose'=>false),$_smarty_tpl);?>
+
+        <?php echo smarty_function_display_errors(array('errors'=>(($tmp = @$_smarty_tpl->getVariable('errosValidacao')->value)===null||$tmp==='' ? null : $tmp)),$_smarty_tpl);?>
+
+        
+        <div class="columns">
+			<div class="colx1-left">
+                <form id="frmPerfil" action="PerfilAction.salvar" class="form" method="post">
+                	<input type="hidden" name="perfilID" id="perfilID" value="<?php echo (($tmp = @$_smarty_tpl->getVariable('perfilID')->value)===null||$tmp==='' ? 0 : $tmp);?>
+" />
+                    <input type="hidden" name="cadastro" id="cadastro" value="<?php echo $_smarty_tpl->getVariable('cadastro')->value;?>
+" />
+			
+                    <fieldset>
+                    	<legend><a href="#"> Dados do Perfil</a></legend>
+                        
+                        <?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('nome')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp1=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"nome",'label'=>"Nome",'required'=>true,'value'=>$_tmp1),$_smarty_tpl);?>
+
+                        <?php ob_start();?><?php echo (($tmp = @$_smarty_tpl->getVariable('dsPerfil')->value)===null||$tmp==='' ? '' : $tmp);?>
+<?php $_tmp2=ob_get_clean();?><?php echo smarty_function_form_input(array('name'=>"dsPerfil",'label'=>"Descrição",'required'=>false,'value'=>$_tmp2),$_smarty_tpl);?>
+
+                        
+                    </fieldset>
+                    
+                    <!-- Vínculo Usuário -->
+                    <?php if ($_smarty_tpl->getVariable('cadastro')->value=="false"){?>
+	                    <fieldset>
+	                        <legend><a href="#"> Usuários Vinculados</a></legend>
+	                        
+	                        <p>
+			                    <label for="usuario">Usuário:</label>
+			                    <?php echo smarty_function_html_options(array('name'=>'usuario','id'=>'usuario','options'=>(($tmp = @$_smarty_tpl->getVariable('usuariosArray')->value)===null||$tmp==='' ? array() : $tmp),'selected'=>(($tmp = @$_smarty_tpl->getVariable('usuario')->value)===null||$tmp==='' ? '' : $tmp)),$_smarty_tpl);?>
+
+			                    
+			                    &nbsp;&nbsp;&nbsp;
+			                    <?php echo smarty_function_action_button(array('id'=>"btVincular",'label'=>" Vincular",'type'=>"button",'icon'=>"add.png",'extra'=>"onclick=\"javascript:vincularUsuario();\""),$_smarty_tpl);?>
+
+			                </p>
+			                
+			                <p>
+								<div id="tbUsuarioVinculado"><?php $_template = new Smarty_Internal_Template("view/perfil/tabelaUsuarioVinculado.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?></div>
+							</p>
+	                        
+	                    </fieldset>
+                    <?php }?>
+                    
+                    <!-- Vínculo Ação -->
+                    <?php if ($_smarty_tpl->getVariable('cadastro')->value=="false"){?>
+	                    <fieldset>
+	                    	<legend><a href="#"> Ações</a></legend>
+	                        
+	                        <p>
+			                    <label for="acao">Ação:</label>
+			                    <?php echo smarty_function_html_options(array('name'=>'acao','id'=>'acao','options'=>(($tmp = @$_smarty_tpl->getVariable('acoesArray')->value)===null||$tmp==='' ? array() : $tmp),'selected'=>(($tmp = @$_smarty_tpl->getVariable('acao')->value)===null||$tmp==='' ? '' : $tmp)),$_smarty_tpl);?>
+
+			                    
+			                    &nbsp;&nbsp;&nbsp;
+			                    <?php echo smarty_function_action_button(array('id'=>"btVincularAcao",'label'=>" Vincular",'type'=>"button",'icon'=>"add.png",'extra'=>"onclick=\"javascript:vincularAcao();\""),$_smarty_tpl);?>
+
+			                </p>
+			                
+			                <p>
+								<div id="tbAcaoVinculada"><?php $_template = new Smarty_Internal_Template("view/perfil/tabelaAcaoVinculada.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?></div>
+							</p>
+	                        
+	                    </fieldset>
+                    <?php }?>
+					                    
+                    <p style="text-align: right;">			
+                        <?php echo smarty_function_action_button(array('type'=>"voltar",'label'=>"Voltar"),$_smarty_tpl);?>
+
+						<?php echo smarty_function_action_button(array('label'=>"Limpar",'type'=>"reset",'class'=>"grey"),$_smarty_tpl);?>
+
+                        <?php echo smarty_function_action_button(array('label'=>"Salvar",'type'=>"submit"),$_smarty_tpl);?>
+
+                    </p> 
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<?php $_template = new Smarty_Internal_Template("layout/footer.tpl", $_smarty_tpl->smarty, $_smarty_tpl, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null);
+ echo $_template->getRenderedTemplate();?><?php $_template->updateParentVariables(0);?><?php unset($_template);?>

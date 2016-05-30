@@ -1,0 +1,20 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2012-01-18 21:41:40
+         compiled from "view/layout/footer.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:19080081474f1758b42bc495-23375824%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'bf4a713b5ec8ba272927123f19f04c20ed143e07' => 
+    array (
+      0 => 'view/layout/footer.tpl',
+      1 => 1326498848,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '19080081474f1758b42bc495-23375824',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+</html>

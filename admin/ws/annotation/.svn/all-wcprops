@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/ws/annotation
+END
+ProduceMime.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/ws/annotation/ProduceMime.class.php
+END
+RequestMethod.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/ws/annotation/RequestMethod.class.php
+END
+PathParam.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/ws/annotation/PathParam.class.php
+END

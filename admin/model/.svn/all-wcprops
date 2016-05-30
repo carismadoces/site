@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/model
+END
+PerfilBean.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/model/PerfilBean.class.php
+END
+AcaoBean.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/model/AcaoBean.class.php
+END
+TipoUsuarioBean.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/model/TipoUsuarioBean.class.php
+END
+GaleriaBean.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/model/GaleriaBean.class.php
+END
+AcaoPerfilBean.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/model/AcaoPerfilBean.class.php
+END
+UsuarioBean.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/model/UsuarioBean.class.php
+END
+UsuarioPerfilBean.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/model/UsuarioPerfilBean.class.php
+END
+ArquivoGaleriaBean.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/model/ArquivoGaleriaBean.class.php
+END
+GenericBean.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/model/GenericBean.class.php
+END
+Paginador.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/model/Paginador.class.php
+END

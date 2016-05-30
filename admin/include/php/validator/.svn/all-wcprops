@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/validator
+END
+NotEmptyValidator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/validator/NotEmptyValidator.class.php
+END
+MinValueValidator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/validator/MinValueValidator.class.php
+END
+LengthValidator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/validator/LengthValidator.class.php
+END
+MaxValueValidator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/validator/MaxValueValidator.class.php
+END
+AssertLengthValidator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/validator/AssertLengthValidator.class.php
+END
+MinLengthValidator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/validator/MinLengthValidator.class.php
+END
+EmailValidator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/validator/EmailValidator.class.php
+END
+MaxLengthValidator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/validator/MaxLengthValidator.class.php
+END
+BaseValidator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/validator/BaseValidator.class.php
+END
+MaskValidator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/validator/MaskValidator.class.php
+END
+NotNullValidator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/validator/NotNullValidator.class.php
+END
+ValueValidator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/validator/ValueValidator.class.php
+END
+PatternValidator.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/validator/PatternValidator.class.php
+END
+ValidatorException.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/carisma_site/!svn/ver/3/trunk/carisma/admin/include/php/validator/ValidatorException.class.php
+END

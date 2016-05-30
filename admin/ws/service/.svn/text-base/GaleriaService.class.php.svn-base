@@ -1,0 +1,90 @@
+<?php
+
+/**
+ * 
+ * @access public
+ * @author Daniel Eduardo
+ * @package ws
+ */
+class GaleriaService extends GenericService{
+	
+	private $galeriaBO;
+	
+	function GaleriaService(){
+		$this->galeriaBO = new GaleriaBO();
+	}
+	
+	/**
+	 @PathParam("/galeria/arquivos")
+	 @RequestMethod("GET")
+	**/
+	public function arquivos($galeriaPath){
+		
+		//$maindir = $_GET["path"];
+		$skipped[] = '.';
+		$skipped[] = '..';
+		
+		$galeria = new GaleriaBean();
+		$galeria->setPath($galeriaPath);
+		$galeria = $this->galeriaBO->buscarGaleria($galeria);
+		$maindir = Constantes::$DIR_CONTEXT . $galeria->getPath();
+		
+		if(is_dir($maindir)) {
+			
+			if($directory = opendir($maindir)){
+				
+				/*
+				while(($folder = readdir($directory)) !== false) {
+					
+					if(!(array_search($folder, $skipped) > -1)) {
+					
+						if(filetype($maindir . $folder) == "dir") {
+								 
+							$folders[$maindir . $folder]["name"] = $folder;
+								   
+						}
+						
+					}
+					
+		        }
+				
+		    	closedir($directory);
+		  		
+				$names = array();
+				$images = array();
+				
+				foreach($folders as $folder){
+					
+					array_push($names, $folder["name"]);
+					
+					$imageListJpg = glob($maindir  . "/" . "*.jpg");
+					$imageListPng = glob($maindir  . "/" . "*.png");
+					$imageList = array_merge($imageListJpg, $imageListPng);
+					
+					$img = array();
+					
+					foreach($imageList as $image) {
+						
+						array_push($img, $image);
+						
+					}
+					
+					array_push($images, $img);
+					
+		  		}
+				*/
+		    	
+		    	$images = array();
+		    	
+		    	$arquivoGaleriaArray = $this->galeriaBO->listarArquivosGaleria($galeria->getGaleriaID(), 'DESC');
+		    	foreach ($arquivoGaleriaArray as $ag) {
+		    		$images[] = '{"img":"' . $galeria->getPath() . $ag->getFile() . '", "desc": "' . $ag->getDsArquivoGaleria() . '"}';   
+		    	}
+		    	
+				echo json_encode($images);
+				
+			}
+		}
+		
+	}
+}
