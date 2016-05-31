@@ -241,18 +241,17 @@
 
 					case "facebook" :
 						if(opts.fb_app) {
-
 						url += 'https://www.facebook.com/dialog/feed?';
 						url += 'app_id=' + opts.fb_app;
 						url += '&display=popup';
-						url += '&link=' + data.link;
-						url += '&picture=' + data.media;
-						url += '&name=' + data.title;
-						url += '&description=' + data.summary;
-						url += '&redirect_uri=' + opts.sharer+'?close=1';
+						url += '&link=' + encodeURIComponent(data.link);
+						url += '&picture=' + encodeURIComponent(data.media);
+						url += '&name=' + encodeURIComponent(data.title);
+						url += '&description=' + encodeURIComponent(data.summary);
+						url += '&redirect_uri=' + encodeURIComponent(opts.sharer+'?close=1');
 						} else {
 						url += 'http://www.facebook.com/sharer.php?s=100';
-						url += '&p[url]=' + data.page;
+						url += '&p[url]=' + encodeURIComponent(data.page);
 						}
 					break;
 
