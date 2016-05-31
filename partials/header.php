@@ -6,7 +6,7 @@
           <div class="header-logo">
             <a href="index.php">
               <img alt="Carisma Doces &amp; Cia" class="logo-default" width="200" height="96" data-sticky-width="150" data-sticky-height="72" data-sticky-top="0" src="img/logo-big.png">
-              <img alt="Parkway Piscinas" class="logo-small" width="150" height="72" data src="img/logo-small.png">
+              <img alt="Carisma Doces &amp; Cia" class="logo-small" width="150" height="72" data src="img/logo-small.png">
             </a>
           </div>
         </div>
