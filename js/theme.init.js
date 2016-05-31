@@ -203,8 +203,6 @@
 				  }
 				});
 
-				console.log(opts);
-
 				$this.themePluginLightbox(opts);
 			});
 		});

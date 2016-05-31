@@ -20,7 +20,7 @@
 
 <script type="text/javascript">
 
-	var allTags = ['Infantil', 'Casamento', 'Noivado', 'Personalizados', 'Diversos', 'Maquete', 'Aniversário', 'Infantil'];
+	var allTags = ['Infantil', 'Tortas', 'Casamento', 'Noivado', 'Personalizados', 'Diversos', 'Maquete', 'Aniversário', 'Infantil'];
 
 	var rotate = 90;
 	$().ready(function() {

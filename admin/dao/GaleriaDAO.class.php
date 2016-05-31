@@ -267,7 +267,7 @@ class GaleriaDAO {
             $tags = array();
             $statment = $this->conexao->query("SELECT tags FROM arquivo_galeria
 							WHERE id_galeria = $galeriaID
-							and tags is not null");
+							and tags <> '');
 
             foreach ($statment->fetchAll(PDO::FETCH_SERIALIZE) as $row){
 								$tags = array_merge($tags, explode(',', $row['tags']));

@@ -6,7 +6,7 @@
 <title>Carisma Doces &amp; Cia</title>
 
 <meta name="keywords" content="Confeitaria,torta,tortas,bolo,bolos,doce,doces,aniversário,casamento,festa,eventos,salgado,salgados,doces finos,cupcake,cake,cake designer  " />
-<meta name="description" content="Loja de Doces,Tortas e Salgados para todo tipo de evento. Venha conhecer a qualidade dos nossos produtos.">
+<meta name="description" content="Loja de Doces, Tortas e Salgados para todos os tipos de evento. Venha conhecer a qualidade dos nossos produtos.">
 <meta name="author" content="carismaconfeitaria.com.br">
 
 <!-- Favicon -->
