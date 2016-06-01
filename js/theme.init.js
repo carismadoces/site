@@ -200,7 +200,7 @@
 					},
 					gallery:{
 				    enabled:true,
-						preload: [6,6]
+						preload: [2,5]
 				  }
 				});
 

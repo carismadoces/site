@@ -35,7 +35,7 @@
 
 jQuery(document).ready(function(){
 	jQuery('img').sti({
-		sharer: 'http://carismaconfeitaria.com.br/vendor/sti/php/sharer.php',
+		sharer: 'http://www.carismaconfeitaria.com.br/vendor/sti/php/sharer.php',
 		selector: 'img',
 		fb_app: '1776080825944993'
 	});
