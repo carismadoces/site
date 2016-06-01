@@ -55,8 +55,8 @@ include_once 'admin/include/php/Util.class.php';
 										<div class="featured-box featured-box-secondary featured-box-effect-1 mt-xlg">
 											<div class="box-content">
 
-												<h4 class="text-uppercase">Casamentoss</h4>
-												<p>É um momento especial e único, venha fazer uma degustação e conhecer nossos produtos para ter a certeza que não irá se arrepender nesse momento tão especial!</p>
+												<h4 class="text-uppercase">Casamentos</h4>
+												<p>É um momento especial e único, venha conhecer nossos produtos para ter a certeza que não irá se arrepender nesse momento tão especial!</p>
 											</div>
 										</div>
 									</div>
