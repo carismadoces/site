@@ -561,19 +561,19 @@ window.theme = {};
 	};
 
 	PluginLightbox.defaults = {
-		tClose: 'Close (Esc)', // Alt text on close button
-		tLoading: 'Loading...', // Text that is displayed during loading. Can contain %curr% and %total% keys
-		gallery: {
-			tPrev: 'Previous (Left arrow key)', // Alt text on left arrow
-			tNext: 'Next (Right arrow key)', // Alt text on right arrow
-			tCounter: '%curr% of %total%' // Markup for "1 of 7" counter
-		},
-		image: {
-			tError: '<a href="%url%">The image</a> could not be loaded.' // Error message when image could not be loaded
-		},
-		ajax: {
-			tError: '<a href="%url%">The content</a> could not be loaded.' // Error message when ajax request failed
-		},
+		tClose: 'Fechar (Esc)', // Alt text on close button
+	  tLoading: 'Carregando...', // Text that is displayed during loading. Can contain %curr% and %total% keys
+	  gallery: {
+	    tPrev: 'Anterior (Tecla para esquerda)', // Alt text on left arrow
+	    tNext: 'Próxima (Tecla para direita)', // Alt text on right arrow
+	    tCounter: '%curr% de %total%' // Markup for "1 of 7" counter
+	  },
+	  image: {
+	    tError: '<a href="%url%">A imagem</a> não pode ser carregada.' // Error message when image could not be loaded
+	  },
+	  ajax: {
+	    tError: '<a href="%url%">O conteúdo</a> não pode ser carregado.' // Error message when ajax request failed
+	  },
 		callbacks: {
 			open: function() {
 				$('body').addClass('lightbox-opened');
@@ -1636,9 +1636,9 @@ window.theme = {};
 
 // Sticky
 (function(theme, $) {
-	
+
 	theme = theme || {};
-	
+
 	var instanceName = '__sticky';
 
 	var PluginSticky = function($el, opts) {
@@ -1706,7 +1706,7 @@ window.theme = {};
 			} else {
 				return new PluginSticky($this, opts);
 			}
-			
+
 		});
 	}
 
@@ -2062,7 +2062,7 @@ window.theme = {};
 					e.preventDefault();
 					$.get(self.options.refreshCaptchaURL, function(url) {
 						$('#captcha-image').attr('src', url);
-					});					
+					});
 				});
 
 			},
@@ -2172,9 +2172,9 @@ window.theme = {};
 
 // Word Rotate
 (function(theme, $) {
-	
+
 	theme = theme || {};
-	
+
 	var instanceName = '__wordRotate';
 
 	var PluginWordRotate = function($el, opts) {
@@ -2231,7 +2231,7 @@ window.theme = {};
 				.width(firstItem.width() + "px")
 				.append(firstItemClone);
 
-			$el				
+			$el
 				.addClass("active");
 
 			setInterval(function() {
@@ -2280,7 +2280,7 @@ window.theme = {};
 			} else {
 				return new PluginWordRotate($this, opts);
 			}
-			
+
 		});
 	}
 
@@ -2787,7 +2787,7 @@ window.theme = {};
 						self.deactivateStickyHeader();
 					}
 				};
-				
+
 				// Activate Sticky Header
 				self.activateStickyHeader = function() {
 

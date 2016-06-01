@@ -199,7 +199,8 @@
 					  	}
 					},
 					gallery:{
-				    enabled:true
+				    enabled:true,
+						preload: [6,6]
 				  }
 				});
 
