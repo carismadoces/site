@@ -18,7 +18,7 @@
                   <span class="ws-nowrap"><i class="fa fa-phone"></i> (61) 3297-0192</span>
                 </li>
                 <li class="hidden-xs">
-                  <span class="ws-nowrap"><i class="fa fa-whatsapp"></i> (61) 8103-2601</span>
+                  <span class="ws-nowrap"><i class="fa fa-whatsapp"></i> (61) 98103-2601</span>
                 </li>
               </ul>
             </nav>

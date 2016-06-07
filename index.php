@@ -71,7 +71,7 @@
 								<span class="thumb-info-caption">
 									<span class="thumb-info-caption-text">
 										<h2 class="text-semibold mb-md mt-xs">Casamentos</h2>
-										<p class="font-size-md">É um momento especial e único, venha fazer uma degustação e conhecer nossos produtos para ter a certeza que não irá se arrepender nesse momento tão especial...</p>
+										<p class="font-size-md">É um momento especial e único, venha conhecer nossos produtos para ter a certeza que não irá se arrepender nesse momento tão especial...</p>
 										<a class="btn btn-primary mt-md" href="servicos.php#eventos">Veja Mais <i class="fa fa-long-arrow-right"></i></a>
 									</span>
 								</span>

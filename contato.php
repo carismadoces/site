@@ -77,7 +77,7 @@
 							<h4 class="heading-primary">Loja - Núcleo Bandeirante</h4>
 							<ul class="list list-icons list-icons-style-3 mt-xlg">
 								<li><i class="fa fa-map-marker"></i> <strong>Endereço:</strong> Terceira Avenida Bloco 1060B - Loja 01 - Núcleo Bandeirante - DF</li>
-								<li><i class="fa fa-phone"></i> <strong>Telefones:</strong> (61) 3297-0192 / 8103-2601</li>
+								<li><i class="fa fa-phone"></i> <strong>Telefones:</strong> (61) 3297-0192 / 98103-2601</li>
 								<li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:atendimento@carismaconfeitaria.com.br">atendimento@carismaconfeitaria.com.br</a></li>
 							</ul>
 
