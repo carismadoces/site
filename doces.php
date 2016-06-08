@@ -26,7 +26,7 @@ include_once 'admin/include/php/Util.class.php';
 				<br/>
 				<h2>DOCES</h2>
 
-				<div id="alert" class="alert alert-default">
+				<div id="alert" class="alert alert-default center">
 					Selecione uma imagem para visualizar a galeria em alta qualidade.
 				</div>
 

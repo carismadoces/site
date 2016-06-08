@@ -75,7 +75,7 @@ include_once 'admin/include/php/Util.class.php';
 					<h4 id="eventos" class="heading-primary center">EVENTOS REALIZADOS</h4>
 					<hr>
 
-					<div id="alert" class="alert alert-default">
+					<div id="alert" class="alert alert-default center">
 						Selecione uma imagem para visualizar a galeria em alta qualidade.
 					</div>
 
