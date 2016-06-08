@@ -38,7 +38,9 @@
 var timeBlink = 0;
 function blink(){
 	timeBlink++;
-	$('.header-btn-collapse-nav').delay(100).fadeTo(100,0.5).delay(100).fadeTo(100,1, timeBlink < 3 ? blink : null);
+	if ( $('.header-btn-collapse-nav').is(':visible') ){
+		$('.header-btn-collapse-nav').delay(100).fadeTo(100,0.5).delay(100).fadeTo(100,1, timeBlink < 3 ? blink : null);
+	}
 }
 
 jQuery(document).ready(function(){
@@ -59,10 +61,8 @@ $(window).bind("load", function() {
 				blink();
 		}, 8000);
 
-		// Blink menu icon
-		if ( $('.header-btn-collapse-nav').is(':visible') ){
-		 blink();
-		}
+	 	blink();
+
 });
 
 </script>
