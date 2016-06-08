@@ -35,10 +35,10 @@
 
 <script>
 
-var time = 0;
+var timeBlink = 0;
 function blink(){
-	time++;
-	$('.header-btn-collapse-nav').delay(100).fadeTo(100,0.5).delay(100).fadeTo(100,1, time < 3 ? blink : null);
+	timeBlink++;
+	$('.header-btn-collapse-nav').delay(100).fadeTo(100,0.5).delay(100).fadeTo(100,1, timeBlink < 3 ? blink : null);
 }
 
 jQuery(document).ready(function(){
@@ -53,6 +53,10 @@ $(window).bind("load", function() {
 		// Hide galery alert
 		setTimeout(function(){
 				$('#alert').hide( "pulsate", { direction: "down" }, "slow" );
+
+				// Blink again
+				timeBlink = 0;
+				blink();
 		}, 8000);
 
 		// Blink menu icon
