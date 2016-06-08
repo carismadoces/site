@@ -98,15 +98,7 @@ include_once 'admin/include/php/Util.class.php';
 			if(window.location.hash.length > 0) {
 				console.log($(window.location.hash).offset().top);
 					window.scrollTo(0, $(window.location.hash).offset().top-150);
-			}
-
-			$(function() {
-
-				setTimeout(function(){
-						$('#alert').hide( "pulsate", { direction: "down" }, "slow" );
-				}, 8000);
-
-			});
+			}			
 		});
 
 	</script>

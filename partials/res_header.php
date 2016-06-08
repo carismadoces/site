@@ -1,6 +1,6 @@
 <?php
   include_once("vendor/php/analyticstracking.php");
-  include_once("vendor/php/user_online.php");
+  // include_once("vendor/php/user_online.php");
 ?>
 
 <!-- Web Fonts  -->

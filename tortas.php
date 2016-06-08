@@ -104,17 +104,5 @@ include_once 'admin/include/php/Util.class.php';
 
 		<?php include_once 'partials/res_footer.php' ?>
 
-		<script>
-
-		$(function() {
-
-			setTimeout(function(){
-					$('#alert').hide( "pulsate", { direction: "down" }, "slow" );
-			}, 8000);
-
-		});
-
-		</script>
-
 	</body>
 </html>
