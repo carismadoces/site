@@ -135,6 +135,10 @@ class GaleriaBO {
     	return $this->arquivoGaleriaDAO->listarArquivosGaleria($galeriaID, $order);
     }
 
+    public function listarArquivosGaleriaPaginada($pagina, $galeriaID = -1, $order = '') {
+      	return $this->arquivoGaleriaDAO->listarArquivosGaleriaPaginada($pagina, $galeriaID, $order);
+      }
+
     public function consultaTodasTags($galeriaID = -1) {
       	return $this->galeriaDAO->consultaTodasTags($galeriaID);
       }

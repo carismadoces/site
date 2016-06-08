@@ -26,6 +26,10 @@ include_once 'admin/include/php/Util.class.php';
 				<br/>
 				<h2>DOCES</h2>
 
+				<div id="alert" class="alert alert-default">
+					Selecione uma imagem para visualizar a galeria em alta qualidade.
+				</div>
+
 				<ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter" data-plugin-options='{"layoutMode": "masonry", "filter": "*"}'>
 					<li data-option-value="*" class="active"><a href="#">Todas</a></li>
 
@@ -94,59 +98,15 @@ include_once 'admin/include/php/Util.class.php';
 
 		<?php include_once 'partials/res_footer.php' ?>
 
-		<script src="http://maps.google.com/maps/api/js"></script>
 		<script>
 
-			/*
-			Map Settings
+		$(function() {
 
-				Find the Latitude and Longitude of your address:
-					- http://universimmedia.pagesperso-orange.fr/geo/loc.htm
-					- http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
+			setTimeout(function(){
+					$('#alert').hide( "pulsate", { direction: "down" }, "slow" );
+			}, 8000);
 
-			*/
-
-			// Map Markers
-			var mapMarkers = [{
-				address: "EPTG, 7756 - Núcleo Bandeirante, Brasília - DF, Brazil",
-				html: "<strong>PARK WAY PISCINAS</strong><br/>EPTG Chacara 55, lote 6 - Vicente Pires<br/>Brasília - DF, 72110-800, Brasil",
-				icon: {
-					image: "img/pin.png",
-					iconsize: [26, 46],
-					iconanchor: [12, 46]
-				},
-				popup: true
-			}];
-
-			// Map Initial Location
-			var initLatitude = -15.814788;
-			var initLongitude = -48.00677;
-
-			// Map Extended Settings
-			var mapSettings = {
-				controls: {
-					draggable: (($.browser.mobile) ? false : true),
-					panControl: true,
-					zoomControl: true,
-					mapTypeControl: true,
-					scaleControl: true,
-					streetViewControl: true,
-					overviewMapControl: true
-				},
-				scrollwheel: false,
-				markers: mapMarkers,
-				latitude: initLatitude,
-				longitude: initLongitude,
-				zoom: 16
-			};
-
-			var map = $("#googlemaps").gMap(mapSettings);
-
-			// Map Center At
-			var mapCenterAt = function(options, e) {
-				e.preventDefault();
-				$("#googlemaps").gMap("centerAt", options);
-			}
+		});
 
 		</script>
 

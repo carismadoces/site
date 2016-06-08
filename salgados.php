@@ -26,6 +26,10 @@ include_once 'admin/include/php/Util.class.php';
 				<br/>
 				<h2>SALGADOS</h2>
 
+				<div id="alert" class="alert alert-default">
+					Selecione uma imagem para visualizar a galeria em alta qualidade.
+				</div>
+
 				<ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter" data-plugin-options='{"layoutMode": "masonry", "filter": "*"}'>
 					<li data-option-value="*" class="active"><a href="#">Todas</a></li>
 
@@ -93,6 +97,18 @@ include_once 'admin/include/php/Util.class.php';
 		</div>
 
 		<?php include_once 'partials/res_footer.php' ?>
+
+		<script>
+
+		$(function() {
+
+			setTimeout(function(){
+					$('#alert').hide( "pulsate", { direction: "down" }, "slow" );
+			}, 8000);
+
+		});
+
+		</script>
 
 	</body>
 </html>

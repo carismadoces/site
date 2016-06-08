@@ -117,6 +117,33 @@ class ArquivoGaleriaDAO {
         }
     }
 
+		public function listarArquivosGaleriaPaginada($pagina = 1, $galeriaID = -1, $order = 'ASC') {
+	        try {
+
+	            $arquivoGaleriaArray = array();
+
+							$limite = Util::getPaginacao($pagina, 4);
+
+	            $statment = $this->conexao->query("SELECT * FROM arquivo_galeria WHERE id_galeria = $galeriaID ORDER BY id_arquivo_galeria $order $limite");
+
+	            foreach ($statment->fetchAll(PDO::FETCH_SERIALIZE) as $row){
+	                $arquivoGaleria = new ArquivoGaleriaBean($row['id_arquivo_galeria'], $row['file'], new GaleriaBean($row['id_galeria']), $row['ds_arquivo_galeria'], $row['tags']);
+
+	                if ( $arquivoGaleria->getGaleria() != null ){
+	                	$arquivoGaleria->setGaleria($this->galeriaDAO->buscarGaleria($arquivoGaleria->getGaleria()));
+	                }
+
+									// $arquivoGaleria->setTags($this->consultarTags($arquivoGaleria->getArquivoGaleriaID()));
+
+	                $arquivoGaleriaArray[] = $arquivoGaleria;
+	            }
+
+	            return $arquivoGaleriaArray;
+	        } catch (PDOException $err) {
+	            throw new Exception("Erro ArquivoGaleriaDAO(listarArquivosGaleria):" . $err->getMessage());
+	        }
+	    }
+
 	public function consultarTags($arquivogaleriaID = -1) {
         try {
 

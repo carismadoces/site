@@ -15,6 +15,8 @@
 <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 <script src="vendor/vide/vide.min.js"></script>
 <script src="vendor/sti/js/sti.js"></script>
+<script src="vendor/underscore/underscore-min.js"></script>
+<script src="vendor/jquery-ui/jquery-ui.min.js"></script>
 
 <!-- Theme Base, Components and Settings -->
 <script src="js/theme.js"></script>

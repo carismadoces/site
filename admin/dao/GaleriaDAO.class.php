@@ -171,6 +171,24 @@ class GaleriaDAO {
         }
     }
 
+		public function buscarGaleriaPaginaa($pagina = 1, $galeria) {
+        try {
+
+					$limite = Util::getPaginacao($pagina);
+        	$where = $this->getWhere($galeria);
+
+            $row = $this->conexao->query("SELECT * FROM galeria g $where $limite")->fetch(PDO::FETCH_SERIALIZE);
+
+            if (isset ($row['id_galeria'])) {
+                return new GaleriaBean($row['id_galeria'], $row['nome'], $row['ds_galeria'], $row['path']);
+            } else {
+                return null;
+            }
+        } catch (PDOException $err) {
+            throw new Exception("Erro GaleriaDAO(buscarGaleria):" . $err->getMessage());
+        }
+    }
+
 	public function listar($pagina = 1, $galeria = null) {
         try {
 

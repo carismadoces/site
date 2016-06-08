@@ -75,6 +75,10 @@ include_once 'admin/include/php/Util.class.php';
 					<h4 id="eventos" class="heading-primary center">EVENTOS REALIZADOS</h4>
 					<hr>
 
+					<div id="alert" class="alert alert-default">
+						Selecione uma imagem para visualizar a galeria em alta qualidade.
+					</div>
+
 					<?php include_once 'eventos/evento1.php' ?>
 					<?php include_once 'eventos/evento2.php' ?>
 
@@ -95,6 +99,14 @@ include_once 'admin/include/php/Util.class.php';
 				console.log($(window.location.hash).offset().top);
 					window.scrollTo(0, $(window.location.hash).offset().top-150);
 			}
+
+			$(function() {
+
+				setTimeout(function(){
+						$('#alert').hide( "pulsate", { direction: "down" }, "slow" );
+				}, 8000);
+
+			});
 		});
 
 	</script>
