@@ -38,7 +38,7 @@
 var time = 0;
 function blink(){
 	time++;
-	$('.header-btn-collapse-nav').delay(100).fadeTo(100,0.5).delay(100).fadeTo(100,1, time < 5 ? blink : null);
+	$('.header-btn-collapse-nav').delay(100).fadeTo(100,0.5).delay(100).fadeTo(100,1, time < 3 ? blink : null);
 }
 
 jQuery(document).ready(function(){
@@ -47,17 +47,18 @@ jQuery(document).ready(function(){
 		selector: 'img',
 		fb_app: '1776080825944993'
 	});
+});
 
-	// Hide galery alert
-	setTimeout(function(){
-			$('#alert').hide( "pulsate", { direction: "down" }, "slow" );
-	}, 8000);
+$(window).bind("load", function() {
+		// Hide galery alert
+		setTimeout(function(){
+				$('#alert').hide( "pulsate", { direction: "down" }, "slow" );
+		}, 8000);
 
-	// Blink menu icon
-	if ( $('.header-btn-collapse-nav').is(':visible') ){
-		blink();
-	}
-
+		// Blink menu icon
+		if ( $('.header-btn-collapse-nav').is(':visible') ){
+		 blink();
+		}
 });
 
 </script>
