@@ -65,9 +65,7 @@
                         Doces
                       </a>
                       <ul class="dropdown-menu">
-                        <li><a href="doces.php#bombons">Bombons</a></li>
                         <li><a href="doces.php#tradicionais">Tradicionais</a></li>
-                        <li><a href="doces.php#finos">Finos</a></li>
                         <li><a href="doces.php#personalizados">Personalizados</a></li>
                         <li><a href="doces.php#diversos">Diversos</a></li>
                       </ul>
