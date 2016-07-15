@@ -182,6 +182,29 @@
 									</div>
 								</section>
 
+								<section class="toggle">
+									<label>SALGADOS</label>
+									<div class="toggle-content">
+
+										<div class="col-md-12">
+
+											<ul class="list list-icons list-primary list-side-borders mt-xlg">
+												 <li><i class="fa fa-check"></i>COXINHA DE FRANGO</li>
+												 <li><i class="fa fa-check"></i>QUIBE COM CATUPIRY</li>
+												 <li><i class="fa fa-check"></i>RISOLE (CREME DE MILHO COM FRANGO)</li>
+												 <li><i class="fa fa-check"></i>ENROLADINHO (SALSICHA COM QUEIJO)</li>
+												 <li><i class="fa fa-check"></i>CROQUETE (CARNE COM MANDIOCA)</li>
+												 <li><i class="fa fa-check"></i>BOLINHO DE QUEIJO</li>
+												 <li><i class="fa fa-check"></i>ESFIRRA DE CARNE</li>
+												 <li><i class="fa fa-check"></i>EMPADA DE FRANGO</li>
+												 <li><i class="fa fa-check"></i>MINI PIZZA CALABRESA</li>
+											</ul>
+
+										</div>
+
+									</div>
+								</section>
+
 							</div>
 						</div>
 					</div>
