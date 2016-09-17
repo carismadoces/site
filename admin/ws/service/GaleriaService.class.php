@@ -85,7 +85,7 @@ class GaleriaService extends GenericService{
 
 		      	// Marca d'agua com logo
 		      	$logoFilePath = Constantes::$DIR_CONTEXT . 'img/watermark.png';
-		      	$exec = "/usr/bin/convert $filePath -gravity SouthEast $logoFilePath -compose Multiply -composite $filePath";
+		      	$exec = "/usr/bin/convert $targetFile -gravity SouthEast $logoFilePath -compose Multiply -composite $targetFile";
 		      	exec($exec);
 
 				$this->galeriaBO->salvarArquivoGaleria(Util::getFileName($targetFile), $galeriaID, $dsArquivoGaleria);
