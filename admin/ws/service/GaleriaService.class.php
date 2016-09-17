@@ -71,7 +71,7 @@ class GaleriaService extends GenericService{
 
 
 				// Recorta a imagem de acordo com as cordenadas e recorde realizadas na página
-		    	$exec = "/usr/local/Cellar/imagemagick/6.9.4-3/bin/convert $filePath -crop " . $cw . "x" . $ch . "+" . $rx . "+" . $ry . " $filePath";
+		    	$exec = "/usr/bin/convert $filePath -crop " . $cw . "x" . $ch . "+" . $rx . "+" . $ry . " $filePath";
 		     	exec($exec);
 
 				// Gera thumbnail
