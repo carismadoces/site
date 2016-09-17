@@ -69,19 +69,24 @@ class GaleriaService extends GenericService{
 				// Transform base64 to image
 				file_put_contents($targetFile, base64_decode(file_get_contents($targetFile)));
 
-				// Redimensiona a imagem
-		       	$exec = "/usr/bin/convert $targetFile -auto-orient -thumbnail x400 -gravity center -background black -extent 500x400 $targetFile";
-		        exec($exec);
+
+				// Recorta a imagem de acordo com as cordenadas e recorde realizadas na página
+		    	$exec = "/usr/local/Cellar/imagemagick/6.9.4-3/bin/convert $filePath -crop " . $cw . "x" . $ch . "+" . $rx . "+" . $ry . " $filePath";
+		     	exec($exec);
 
 				// Gera thumbnail
-		       	$thumbDest = $uploadDir . "thumbs/" . Util::getFileName($targetFile);
-		       	$exec = "/usr/bin/convert -resize 60x $targetFile $thumbDest";
-		        exec($exec);
+		     	$thumbDest = $uploadDir . "thumbs/" . Util::getFileName($filePath);
+		     	$exec = "/usr/bin/convert -thumbnail 200x200^ $filePath $thumbDest";
+		      	exec($exec);
 
-		        // Marca d'agua com logo
-		        $logoFilePath = Constantes::$DIR_CONTEXT . 'images/logo/watermark.png';
-		        $exec = "/usr/bin/convert $targetFile -gravity SouthEast $logoFilePath -compose Multiply -composite $targetFile";
-		        exec($exec);
+		     	// Redimensiona a imagem
+		     	$exec = "/usr/bin/convert -resize '800^>' $filePath" . '[0] ' . $filePath;
+		     	exec($exec);
+
+		      	// Marca d'agua com logo
+		      	$logoFilePath = Constantes::$DIR_CONTEXT . 'img/watermark.png';
+		      	$exec = "/usr/bin/convert $filePath -gravity SouthEast $logoFilePath -compose Multiply -composite $filePath";
+		      	exec($exec);
 
 				$this->galeriaBO->salvarArquivoGaleria(Util::getFileName($targetFile), $galeriaID, $dsArquivoGaleria);
 
