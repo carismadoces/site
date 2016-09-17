@@ -17,11 +17,22 @@ class GaleriaService extends GenericService{
 	}
 
 	/**
+	 @PathParam("/galeria/listar_todas")
+	**/
+	public function listarTodas(){
+
+		$galerias = $this->galeriaBO->listar();
+		echo $this->build($galerias);
+
+	}
+
+	/**
 	 @PathParam("/galeria/edit")
 	**/
 	public function alterarArquivoGaleria(){
 
-		$this->bean->setDsArquivoGaleria($this->bean->getDsArquivoGaleria($this->bean->getArquivoGaleriaID()));
+		// $this->bean->setDsArquivoGaleria($this->bean->getDsArquivoGaleria($this->bean->getArquivoGaleriaID()));
+		// $this->bean->setTags
 		$this->galeriaBO->alterarDescricaoArquivoGaleria($this->bean);
 
 		header('Access-Control-Allow-Origin: *');
