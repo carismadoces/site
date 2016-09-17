@@ -71,16 +71,16 @@ class GaleriaService extends GenericService{
 
 
 				// Recorta a imagem de acordo com as cordenadas e recorde realizadas na página
-		    	$exec = "/usr/bin/convert $filePath -crop " . $cw . "x" . $ch . "+" . $rx . "+" . $ry . " $filePath";
+		    	$exec = "/usr/bin/convert $targetFile -crop " . $cw . "x" . $ch . "+" . $rx . "+" . $ry . " $targetFile";
 		     	exec($exec);
 
 				// Gera thumbnail
-		     	$thumbDest = $uploadDir . "thumbs/" . Util::getFileName($filePath);
-		     	$exec = "/usr/bin/convert -thumbnail 200x200^ $filePath $thumbDest";
+		     	$thumbDest = $uploadDir . "thumbs/" . Util::getFileName($targetFile);
+		     	$exec = "/usr/bin/convert -thumbnail 200x200^ $targetFile $thumbDest";
 		      	exec($exec);
 
 		     	// Redimensiona a imagem
-		     	$exec = "/usr/bin/convert -resize '800^>' $filePath" . '[0] ' . $filePath;
+		     	$exec = "/usr/bin/convert -resize '800^>' $targetFile" . '[0] ' . $targetFile;
 		     	exec($exec);
 
 		      	// Marca d'agua com logo
