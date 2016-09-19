@@ -68,19 +68,19 @@ class ArquivoGaleriaDAO {
             		file,
 	                id_galeria,
 	                ds_arquivo_galeria,
-									tags
+					tags
 	            )
                 VALUES (
                 	:file,
 	                :galeriaID,
 	                :dsArquivoGaleria,
-									:tags
+					:tags
 	                );");
 
         	$statment->bindParam(':file', $file);
         	$statment->bindParam(':galeriaID', $galeriaID);
         	$statment->bindParam(':dsArquivoGaleria', $dsArquivoGaleria);
-					$statment->bindParam(':tags', $tags);
+			$statment->bindParam(':tags', $tags);
 
             if ($statment->execute()) {
                 return $galeriaID;

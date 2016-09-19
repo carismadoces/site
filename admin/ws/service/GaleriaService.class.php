@@ -32,7 +32,6 @@ class GaleriaService extends GenericService{
 	public function alterarArquivoGaleria(){
 
 		// $this->bean->setDsArquivoGaleria($this->bean->getDsArquivoGaleria($this->bean->getArquivoGaleriaID()));
-		// $this->bean->setTags
 		$this->galeriaBO->alterarDescricaoArquivoGaleria($this->bean);
 
 		header('Access-Control-Allow-Origin: *');
@@ -57,7 +56,7 @@ class GaleriaService extends GenericService{
 	/**
 	 @PathParam("/galeria/upload")
 	**/
-	public function upload($galeriaID = 0, $dsArquivoGaleria = null){
+	public function upload($galeriaID = 0, $dsArquivoGaleria = null, $tags = null){
 
 		$galeria = $this->galeriaBO->buscarGaleria(new GaleriaBean($galeriaID));
 		$uploadDir = Constantes::$DIR_CONTEXT . $galeria->getPath();
@@ -99,7 +98,7 @@ class GaleriaService extends GenericService{
 		      	$exec = "/usr/bin/convert $targetFile -gravity SouthEast $logoFilePath -compose Multiply -composite $targetFile";
 		      	exec($exec);
 
-				$this->galeriaBO->salvarArquivoGaleria(Util::getFileName($targetFile), $galeriaID, $dsArquivoGaleria);
+				$this->galeriaBO->salvarArquivoGaleria(Util::getFileName($targetFile), $galeriaID, $dsArquivoGaleria, $tags);
 
 			} else {
 
