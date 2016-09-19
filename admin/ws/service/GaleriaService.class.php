@@ -56,7 +56,7 @@ class GaleriaService extends GenericService{
 	/**
 	 @PathParam("/galeria/upload")
 	**/
-	public function upload($galeriaID = 0, $dsArquivoGaleria = null, $tags = null){
+	public function upload($galeriaID = 0, $tags = null, $dsArquivoGaleria = null){
 
 		$galeria = $this->galeriaBO->buscarGaleria(new GaleriaBean($galeriaID));
 		$uploadDir = Constantes::$DIR_CONTEXT . $galeria->getPath();
