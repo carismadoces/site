@@ -55,7 +55,7 @@ include_once 'admin/include/php/Util.class.php';
 					<ul class="portfolio-list sort-destination lightbox m-none" data-plugin-options='{"delegate": "a.lightbox-portfolio", "type": "image", "gallery": {"enabled": true}}' data-sort-id="portfolio">
 
 						<?php
-							$list = $galeriaBO->listarArquivosGaleria($arquivoGaleriaID);
+							$list = $galeriaBO->listarArquivosGaleria($arquivoGaleriaID, 'DESC');
 
 							foreach ($list as $key => $ag) {
 
