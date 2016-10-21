@@ -42,7 +42,6 @@ include_once 'admin/include/php/Util.class.php';
 						foreach ($tags as $key => $tag) {
 
 								$tagLower = Util::replace_accents(strtolower($tag));
-								$tagLower = ucwords(strtolower($tagLower));
 
 					?>
 						<li data-option-value=".<?php echo $tagLower; ?>"><a href="#"><?php echo $tag;?></a></li>
